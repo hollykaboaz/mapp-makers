@@ -5,8 +5,8 @@ An application that aids in quickly managing class attendance by identifying and
 MAPP ATTENDENCE APP
 
 Team
-Holly Boaz : UX/UI
 Lead Programmer : Edwin Bonilla
+Holly Boaz : UX/UI
 Project Manager : Duaa Fatima Khawaja
 Document Lead : Robert Hood
 Data Modeler : Jessica Simao

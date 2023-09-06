@@ -13,8 +13,8 @@ Discord and Microsoft Teams
 **Team:** <br>
 1. Holly Boaz : UX/UI 😀
 2. Lead Programmer : Edwin Bonilla :computer:
-3. Project Manager : Duaa Fatima Khawaja
-4. Document Lead : Robert Hood
+3. Project Manager : Duaa Fatima Khawaja 
+4. Document Lead : Robert Hood :card_index: 
 5. Data Modeler : Jessica Simao
 6. Testing Lead: Dakota Smith
 

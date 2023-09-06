@@ -1,16 +1,22 @@
-# MAPP Attendence App
+**MAPP Attendence App**
 An application that aids in quickly managing class attendance by identifying and recognizing students attendance using a QCR code.
 
+**Repo Location**
+https://github.com/hollykaboaz/mapp-makers
 
-MAPP ATTENDENCE APP
+**Process Tracking Tool**
+JIRA
 
-Team
-Holly Boaz : UX/UI
-Lead Programmer : Edwin Bonilla
-Project Manager : Duaa Fatima Khawaja
-Document Lead : Robert Hood
-Data Modeler : Jessica Simao
-Testing Lead: Dakota Smith
+**Communication Tools**
+Discord and Microsoft Teams
+
+**Team**
+1. Holly Boaz : UX/UI
+2. Lead Programmer : Edwin Bonilla :computer:
+3. Project Manager : Duaa Fatima Khawaja
+4. Document Lead : Robert Hood
+5. Data Modeler : Jessica Simao
+6. Testing Lead: Dakota Smith
 
 
 Repo Link

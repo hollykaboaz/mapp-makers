@@ -6,8 +6,8 @@ MAPP ATTENDENCE APP
 
 Team
 Lead Programmer : Edwin Bonilla
-Holly Boaz : UX/UI
 Project Manager : Duaa Fatima Khawaja
+UI/UX: Holly Boaz
 Document Lead : Robert Hood
 Data Modeler : Jessica Simao
 Testing Lead: Dakota Smith

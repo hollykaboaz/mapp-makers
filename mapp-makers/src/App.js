@@ -1,25 +1,72 @@
-import logo from './logo.svg';
-import './App.css';
+import './components/App.css';
+import React, { useState } from 'react';
+import { useMultistepForm } from './components/useMultiForm';
+import  emailForm  from './components/emailForm';
+import  passForm  from './components/passForm';
+import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+  const auth = getAuth();
 
-export default App;
+  const INITIAL_DATA = {
+    email: "",
+    password: "",
+  };
+
+  const [data, setData] = useState(INITIAL_DATA);
+
+  function updateFields(fields) {
+    setData((prev) => {
+      return { ...prev, ...fields };
+    });
+  }
+
+  const { steps, currentStepIndex, step, isFirstStep, isLastStep, back, next } =
+    useMultistepForm([
+      React.createElement(emailForm, { ...data, updateFields }),
+      React.createElement(passForm, { ...data, updateFields }),
+    ]);
+
+
+    async function onSubmit(e) {
+      e.preventDefault();
+  
+      if (isLastStep) {
+        try {
+          // Use Firebase's createUserWithEmailAndPassword to create a new user
+          await createUserWithEmailAndPassword(auth, data.email, data.password);
+          alert("Successful Account Creation");
+        } catch (error) {
+          // Handle any registration errors here
+          alert("Registration failed. Please try again.");
+          console.log(error);
+        }
+      } else {
+        next();
+      }
+    }
+
+
+
+    return (
+      <div className='formContainer'>
+        <form onSubmit={onSubmit}>
+          <div className='stepCounter'>
+            {currentStepIndex + 1} / {steps.length}
+          </div>
+          {step}
+          <div className='buttonContainer'>
+            {!isFirstStep && (
+              <button type="button" onClick={back}>
+                Back
+              </button>
+            )}
+            <button type="submit">{isLastStep ? "Finish" : "Next"}</button>
+          </div>
+        </form>
+      </div>
+    );
+  }
+  
+  export default App;

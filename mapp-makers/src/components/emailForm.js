@@ -13,6 +13,7 @@ function emailForm({ email, updateFields }) {
         onChange={(e) => updateFields({ email: e.target.value })}
       />
     </FormWrapper>
+    
   );
 }
 

@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { useMultistepForm } from './components/useMultiForm';
 import  emailForm  from './components/emailForm';
 import  passForm  from './components/passForm';
-import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+import { getAuth, createUserWithEmailAndPassword, sendEmailVerification } from "firebase/auth";
 
 
 function App() {
@@ -37,6 +37,11 @@ function App() {
           // Use Firebase's createUserWithEmailAndPassword to create a new user
           await createUserWithEmailAndPassword(auth, data.email, data.password);
           alert("Successful Account Creation");
+          await sendEmailVerification(auth.currentUser)
+            .then(() => {
+              // Email verification sent!
+              // ...
+            });
         } catch (error) {
           // Handle any registration errors here
           alert("Registration failed. Please try again.");

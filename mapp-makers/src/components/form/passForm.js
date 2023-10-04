@@ -1,11 +1,12 @@
 import React from "react";
 import FormWrapper from "./formWrapper";
+import TextInput from "../TextInput";
 
 function passForm({ password, updateFields }) {
   return (
-    <FormWrapper title="Account Creation">
+    <FormWrapper title="Create An Account">
       <label>Password</label>
-      <input
+      <TextInput
         required
         type="password"
         value={password}

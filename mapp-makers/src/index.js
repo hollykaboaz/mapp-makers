@@ -1,9 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './components/index.css';
-import App from './App';
+import SignUpForm from './pages/Sign Up/SignUpForm';
 import reportWebVitals from './components/reportWebVitals';
-import { AuthProvider } from "./components/AuthContext"; // Import the AuthProvider
+import { AuthProvider } from "./components/AuthContext";
+import {SignUpLayout} from "./pages/Sign Up/SignUpLayout"; // Import the AuthProvider
 
 
 
@@ -12,7 +13,8 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <AuthProvider>
-      <App />
+      {/*<SignUpForm />*/}
+        <SignUpLayout/>
     </AuthProvider>
   </React.StrictMode>,
 );

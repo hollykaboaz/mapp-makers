@@ -1,12 +1,12 @@
-import './components/App.css';
+import '../../components/App.css';
 import React, { useState } from 'react';
-import { useMultistepForm } from './components/useMultiForm';
-import  emailForm  from './components/emailForm';
-import  passForm  from './components/passForm';
+import { useMultistepForm } from '../../hooks/useMultiForm';
+import  emailForm  from '../../components/form/emailForm';
+import  passForm  from '../../components/form/passForm';
 import { getAuth, createUserWithEmailAndPassword, sendEmailVerification } from "firebase/auth";
 
 
-function App() {
+function SignUpForm() {
   const auth = getAuth();
 
   const INITIAL_DATA = {
@@ -55,23 +55,23 @@ function App() {
 
 
     return (
-      <div className='formContainer'>
+      <div className=''>
         <form onSubmit={onSubmit}>
           <div className='stepCounter'>
             {currentStepIndex + 1} / {steps.length}
           </div>
           {step}
           <div className='buttonContainer'>
+            <button className='mt-8 bg-black text-white text-center px-4 py-2 w-full rounded text-lg' type="submit">{isLastStep ? "Sign Up" : "Next"}</button>
             {!isFirstStep && (
-              <button type="button" onClick={back}>
-                Back
-              </button>
+                <button className='mt-4 bg-gray-200 text-black text-center px-4 py-2 w-full rounded text-lg' type="button" onClick={back}>
+                  Back
+                </button>
             )}
-            <button type="submit">{isLastStep ? "Finish" : "Next"}</button>
           </div>
         </form>
       </div>
     );
   }
   
-  export default App;
+  export default SignUpForm;

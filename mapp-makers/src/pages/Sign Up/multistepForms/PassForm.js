@@ -5,9 +5,9 @@ import TextInput from "../../../components/TextInput";
 function passForm({ password, updateFields }) {
   return (
     <FormWrapper title="Create An Account">
-      <label>Password</label>
       <TextInput
         required
+        label="Password"
         type="password"
         value={password}
         onChange={(e) => updateFields({ password: e.target.value })}

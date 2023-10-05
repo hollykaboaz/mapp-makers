@@ -1,20 +1,32 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import {BrowserRouter, Route, Routes} from "react-router-dom";
 import SignUpForm from './pages/Sign Up/SignUpForm';
-import { AuthProvider } from "./firebase/AuthContext";
-import {SignInLayout} from "./layouts/SignInLayout"; // Import the AuthProvider
-
-
+import {AuthProvider} from "./firebase/AuthContext";
+import {SignInLayout} from "./layouts/SignInLayout";
+import SignInForm from "./pages/Sign In/SignInForm"; // Import the AuthProvider
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
-    <AuthProvider>
-        <SignInLayout>
-            <SignUpForm page='signUp'/>
-        </SignInLayout>
-    </AuthProvider>
-  </React.StrictMode>,
+    <React.StrictMode>
+        <AuthProvider>
+            <BrowserRouter>
+                <Routes>
+                    <Route path='/signup' element={
+                        <SignInLayout page='signUp'>
+                            <SignUpForm/>
+                        </SignInLayout>
+                    }/>
+                    <Route path='/' element={
+                        <SignInLayout page='signIn'>
+                          <SignInForm/>
+                        </SignInLayout>
+                    }/>
+                </Routes>
+            </BrowserRouter>
+
+        </AuthProvider>
+    </React.StrictMode>,
 );
 

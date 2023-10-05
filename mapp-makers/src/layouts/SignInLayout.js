@@ -1,5 +1,6 @@
 import Background from '../assets/sign_in_background.jpg'
 import "../index.css"
+import {Link} from "react-router-dom";
 export const SignInLayout = (props) => {
     return(
         <div className='grid grid-cols-3 max-w-screen-2xl h-screen'>
@@ -7,8 +8,10 @@ export const SignInLayout = (props) => {
             <div className='col-span-2 mx-8'>
 
                 <div className='flex flex-row w-full justify-end items-center gap-4 py-4 mb-28'>
-                     <p>{ props.page === 'signIn' ? 'Already'  : 'Don\'t' } have an account? </p>
-                     <button className='px-6 py-2 border-2 border-black rounded-full'> Sign { props.page === 'signIn' ? 'Up' : 'In'}  </button>
+                     <p>{ props.page === 'signUp' ? 'Already'  : 'Don\'t' } have an account? </p>
+                    <Link to={ props.page === 'signIn' ? '/signup' : '/'}>
+                        <button className='px-6 py-2 border-2 border-black rounded-full'> Sign { props.page === 'signIn' ? 'Up' : 'In'}  </button>
+                    </Link>
                 </div>
 
                 <div className="mx-32">

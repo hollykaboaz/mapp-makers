@@ -4,6 +4,7 @@ import { useMultistepForm } from '../../hooks/useMultiForm';
 import  emailForm  from './multistepForms/EmailForm';
 import  passForm  from './multistepForms/PassForm';
 import { getAuth, createUserWithEmailAndPassword, sendEmailVerification } from "firebase/auth";
+import SecondaryButton from "../../components/SecondaryButton";
 
 
 function SignUpForm() {
@@ -55,22 +56,24 @@ function SignUpForm() {
 
 
     return (
-      <div className=''>
         <form onSubmit={onSubmit}>
-          <div className='stepCounter'>
-            {currentStepIndex + 1} / {steps.length}
-          </div>
-          {step}
-          <div className='buttonContainer'>
-            <button className='mt-8 bg-black text-white text-center px-4 py-2 w-full rounded text-lg' type="submit">{isLastStep ? "Sign Up" : "Next"}</button>
+          {/*<div className='stepCounter'>*/}
+          {/*  {currentStepIndex + 1} / {steps.length}*/}
+          {/*</div>*/}
+          <div className="flex flex-col gap-4">
+            {step}
+            <div className='buttonContainer'>
+            <SecondaryButton  type="submit" text={isLastStep ? "Sign Up" : "Next"}/>
             {!isFirstStep && (
                 <button className='mt-4 bg-gray-200 text-black text-center px-4 py-2 w-full rounded text-lg' type="button" onClick={back}>
                   Back
                 </button>
             )}
           </div>
+          </div>
+
+
         </form>
-      </div>
     );
   }
   

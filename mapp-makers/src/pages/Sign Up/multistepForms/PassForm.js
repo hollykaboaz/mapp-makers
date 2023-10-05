@@ -5,13 +5,15 @@ import TextInput from "../../../components/TextInput";
 function passForm({ password, updateFields }) {
   return (
     <FormWrapper title="Create An Account">
-      <TextInput
-        required
-        label="Password"
-        type="password"
-        value={password}
-        onChange={(e) => updateFields({ password: e.target.value })}
-      />
+        <div className='flex flex-col gap-1'>
+            <label className='font-light text-gray-600 text-sm'>Password</label>
+            <input
+                required
+                type="password"
+                value={password}
+                onChange={(e) => updateFields({ password: e.target.value })}
+                className='border-gray-200 border rounded w-full p-2  focus:outline-0 '/>
+        </div>
     </FormWrapper>
   );
 }

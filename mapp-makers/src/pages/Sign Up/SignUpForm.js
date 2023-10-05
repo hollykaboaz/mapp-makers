@@ -1,8 +1,8 @@
 import '../../components/App.css';
 import React, { useState } from 'react';
 import { useMultistepForm } from '../../hooks/useMultiForm';
-import  emailForm  from '../../components/form/EmailForm';
-import  passForm  from '../../components/form/PassForm';
+import  emailForm  from './forms/EmailForm';
+import  passForm  from './forms/PassForm';
 import { getAuth, createUserWithEmailAndPassword, sendEmailVerification } from "firebase/auth";
 
 

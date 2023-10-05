@@ -4,7 +4,7 @@ import './components/index.css';
 import SignUpForm from './pages/Sign Up/SignUpForm';
 import reportWebVitals from './components/reportWebVitals';
 import { AuthProvider } from "./components/AuthContext";
-import {SignUpLayout} from "./pages/Sign Up/SignUpLayout"; // Import the AuthProvider
+import {SignInLayout} from "./layouts/SignInLayout"; // Import the AuthProvider
 
 
 
@@ -13,9 +13,9 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <AuthProvider>
-        <SignUpLayout>
+        <SignInLayout>
             <SignUpForm page='signUp'/>
-        </SignUpLayout>
+        </SignInLayout>
     </AuthProvider>
   </React.StrictMode>,
 );

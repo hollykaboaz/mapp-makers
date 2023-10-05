@@ -6,9 +6,7 @@ function FormWrapper({ title, children }) {
       <h2 className='text-3xl text-center font-medium'>
         {title}
       </h2>
-      <div
-        className=''
-      >
+      <div>
         {children}
       </div>
     </>

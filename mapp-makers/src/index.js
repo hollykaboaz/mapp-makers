@@ -13,7 +13,7 @@ root.render(
         <AuthProvider>
             <BrowserRouter>
                 <Routes>
-                    <Route path='/signup' element={
+                    <Route exact path='/signup' element={
                         <SignInLayout page='signUp'>
                             <SignUpForm/>
                         </SignInLayout>

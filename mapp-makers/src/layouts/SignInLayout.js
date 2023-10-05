@@ -1,6 +1,5 @@
 import Background from '../assets/sign_in_background.jpg'
-import "../components/App.css"
-import SignUpForm from "../pages/Sign Up/SignUpForm";
+import "../index.css"
 export const SignInLayout = (props) => {
     return(
         <div className='grid grid-cols-3 max-w-screen-2xl h-screen'>

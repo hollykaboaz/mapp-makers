@@ -1,5 +1,5 @@
 import React from "react";
-import FormWrapper from "../../../components/form/FormWrapper";
+import FormWrapper from "../../../components/FormWrapper";
 import TextInput from "../../../components/TextInput";
 
 function passForm({ password, updateFields }) {

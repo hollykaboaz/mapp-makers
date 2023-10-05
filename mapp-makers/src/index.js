@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import SignUpForm from './pages/Sign Up/SignUpForm';
-import { AuthProvider } from "./components/AuthContext";
+import { AuthProvider } from "./firebase/AuthContext";
 import {SignInLayout} from "./layouts/SignInLayout"; // Import the AuthProvider
 
 

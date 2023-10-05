@@ -14,7 +14,7 @@ export const SignInLayout = (props) => {
                     </Link>
                 </div>
 
-                <div className="mx-32">
+                <div className="mx-24">
                     {props.children}
                 </div>
 

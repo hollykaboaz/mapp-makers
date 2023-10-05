@@ -57,9 +57,9 @@ function SignUpForm() {
 
     return (
         <form onSubmit={onSubmit}>
-          {/*<div className='stepCounter'>*/}
-          {/*  {currentStepIndex + 1} / {steps.length}*/}
-          {/*</div>*/}
+          <div className='stepCounter'>
+            {currentStepIndex + 1} / {steps.length}
+          </div>
           <div className="flex flex-col gap-4">
             {step}
             <div className='buttonContainer'>

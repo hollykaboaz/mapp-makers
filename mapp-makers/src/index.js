@@ -13,8 +13,9 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <AuthProvider>
-      {/*<SignUpForm />*/}
-        <SignUpLayout/>
+        <SignUpLayout>
+            <SignUpForm page='signUp'/>
+        </SignUpLayout>
     </AuthProvider>
   </React.StrictMode>,
 );

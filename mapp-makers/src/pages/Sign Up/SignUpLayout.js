@@ -8,8 +8,8 @@ export const SignUpLayout = (props) => {
             <div className='col-span-2 mx-8'>
 
                 <div className='flex flex-row w-full justify-end items-center gap-4 py-4 mb-28'>
-                    { props.page === 'signIn' ? <p>Already have an account?</p> : <p>Don't have an account?</p>}
-                    { props.page === 'signIn' ? <button className='px-6 py-2 border-2 border-black rounded-full'> Sign Up </button> : <button className='px-6 py-2 border-2 border-black rounded-full'> Sign In </button>  }
+                     <p>{ props.page === 'signIn' ? 'Already'  : 'Don\'t' } have an account? </p>
+                     <button className='px-6 py-2 border-2 border-black rounded-full'> Sign { props.page === 'signIn' ? 'Up' : 'In'}  </button>
                 </div>
 
                 <div className="mx-32">

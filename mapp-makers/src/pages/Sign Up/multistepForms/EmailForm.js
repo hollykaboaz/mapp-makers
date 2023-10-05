@@ -6,7 +6,7 @@ function emailForm({ email, updateFields }) {
   return (
     <FormWrapper title="Create An Account">
         <div className='flex flex-col gap-1'>
-            <label className='font-light text-gray-600 text-sm'>Password</label>
+            <label className='font-light text-gray-600 text-sm'>Email</label>
             <input
                 required
                 type="email"

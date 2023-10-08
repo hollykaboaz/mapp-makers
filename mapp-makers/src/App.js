@@ -1,69 +1,68 @@
 import './App.css';
+import { EmailComp } from './components/EmailComp';
+import { PassComp } from './components/PassComp';
 import { Stepper } from './components/Stepper';
-import { StepOne } from './components/StepOne';
-import {StepTwo} from './components/StepTwo';
-import { StepThree } from './components/StepThree';
-import { useState } from 'react';
+import { StepperControl } from './components/StepperControl';
+import { useContext, useState } from 'react';
+import {StepperContext} from "./Context/StepperContext";
+
+
 
 function App() {
+const [currentStep, setCurrentStep] = useState(1);
+const [userData, setUserData]  = useState("");
+const [finalData, setFinalData] = useState([]);
+  const steps = [
+    "Enter your email address",
+    "Create your password"
+  ]
 
-  const [step, setStep] = useState(1);
-  const [email, setEmail] = useState('');
-  const [isRobot, setIsRobot] = useState(false);
-  const [verificationCode, setVerificationCode] = useState('');
-  const [password, setPassword] = useState('');
 
-  const nextStep = () => setStep(step + 1);
-  const prevStep = () => setStep(step - 1);
-
-  const handleChange = (field) => (e) => {
-    const value = e.target.type === 'checkbox' ? e.target.checked : e.target.value;
-    switch (field) {
-      case 'email':
-        setEmail(value);
-        break;
-      case 'isRobot':
-        setIsRobot(value);
-        break;
-      case 'verificationCode':
-        setVerificationCode(value);
-        break;
-      case 'password':
-        setPassword(value);
-        break;
+  const displayStep =(step)=> {
+    switch(step){
+      case 1:
+        return <EmailComp/>
+      case 2:
+        return <PassComp/>
       default:
-        break;
     }
-  };
-
+  }
+  const handleClick = (direction) => {
+    let newStep = currentStep;
+    direction === "next" ? newStep ++ : newStep-- ;
+    //check if the steps are within bounds
+    newStep > 0 && newStep <= steps.length && setCurrentStep(newStep);
+  }
   return (
 
-    <div className="app">
-    <h1>Create an Account</h1>
-    <Stepper step={step} />
-    {step === 1 && (
-      <StepOne
-        nextStep={nextStep}
-        handleChange={handleChange}
-        email={email}
-        isRobot={isRobot}
-      />
-    )}
-    {step === 2 && (
-      <StepTwo
-        nextStep={nextStep}
-        prevStep={prevStep}
-        handleChange={handleChange}
-        verificationCode={verificationCode}
-      />
-    )}
-    {step === 3 && (
-        <StepThree
-          prevStep={prevStep}
-          handleChange={handleChange}
-          password={password}
-        />
-      )}
+    <div className="md:w-1/2 mx-auto shadow-xl counded-2xl pb-2 bg-white">
+    {/* Stepper */}
+    <div className=" container horizontal mt-5">
+    <Stepper
+    steps = {steps}
+    currentStep= {currentStep}
+    />
+    </div>
+
+    <div className="my-10 p-10">
+      <StepperContext.Provider value={{
+        userData,
+        setUserData,
+        finalData,
+        setFinalData
+      }}>
+
+        {displayStep(currentStep)}
+      </StepperContext.Provider>
+    </div>
+
+    {/* Navigation controls */}
+    <StepperControl
+    handleClick = {handleClick}
+    currentStep = {currentStep}
+    steps={steps}
+    
+    />
     </div>
     
   );

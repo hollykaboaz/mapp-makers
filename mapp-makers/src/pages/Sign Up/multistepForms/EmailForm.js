@@ -2,7 +2,7 @@ import React from "react";
 import FormWrapper from "../../../components/FormWrapper";
 import TextInput from "../../../components/TextInput";
 
-function emailForm({ email, updateFields }) {
+function EmailForm({ email, updateFields }) {
   return (
     <FormWrapper title="Create An Account">
             <label className='font-light text-gray-600 text-sm'>Email</label>
@@ -17,4 +17,4 @@ function emailForm({ email, updateFields }) {
   );
 }
 
-export default emailForm;
+export default EmailForm;

@@ -1,17 +1,7 @@
-// this component is taken from Dakota's code
+import React from 'react'
 
-import FormWrapper from "./FormWrapper";
-
-export function PassForm({ password, updateFields }) {
+export const PassForm = () => {
   return (
-    <FormWrapper title="Account Creation">
-      <label>Password</label>
-      <input
-        required
-        type="password"
-        value={password}
-        onChange={(e) => updateFields({ password: e.target.value })}
-      />
-    </FormWrapper>
-  );
+    <div>PassForm</div>
+  )
 }

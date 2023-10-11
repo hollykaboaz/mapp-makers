@@ -1,6 +1,6 @@
 import './App.css';
-import { EmailForm } from './components/EmailForm';
-import { PassForm } from './components/PassForm';
+import {EmailForm} from './components/EmailForm'
+import {PassForm} from './components/PassForm'
 import { Stepper } from './components/Stepper';
 import { StepperControl } from './components/StepperControl';
 import { useContext, useState } from 'react';

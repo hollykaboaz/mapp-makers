@@ -1,18 +1,7 @@
-// taken from Dakota's code
-import FormWrapper from "./FormWrapper";
+import React from 'react'
 
-export function EmailForm({ email, updateFields }) {
+export const EmailForm = () => {
   return (
-    <FormWrapper title="Account Creation">
-      <label>Email</label>
-      <input
-        autoFocus
-        required
-        type="email"
-        value={email}
-        onChange={(e) => updateFields({ email: e.target.value })}
-      />
-    </FormWrapper>
-  );
+    <div>EmailForm</div>
+  )
 }
-

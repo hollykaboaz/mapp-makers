@@ -1,6 +1,6 @@
 import './App.css';
-import { EmailComp } from './components/EmailComp';
-import { PassComp } from './components/PassComp';
+import { EmailForm } from './components/EmailForm';
+import { PassForm } from './components/PassForm';
 import { Stepper } from './components/Stepper';
 import { StepperControl } from './components/StepperControl';
 import { useContext, useState } from 'react';
@@ -21,9 +21,9 @@ const [finalData, setFinalData] = useState([]);
   const displayStep =(step)=> {
     switch(step){
       case 1:
-        return <EmailComp/>
+        return <EmailForm/>
       case 2:
-        return <PassComp/>
+        return <PassForm/>
       default:
     }
   }

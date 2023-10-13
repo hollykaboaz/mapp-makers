@@ -42,8 +42,3 @@ export const Final = () => {
           </div>
   );
   }
-
-
-      
-  
-

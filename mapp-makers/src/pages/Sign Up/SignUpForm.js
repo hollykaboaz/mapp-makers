@@ -1,8 +1,8 @@
 import '../../index.css';
 import React, { useState } from 'react';
 import { useMultistepForm } from '../../hooks/useMultiForm';
-import  emailForm  from './multistepForms/EmailForm';
-import  passForm  from './multistepForms/PassForm';
+import  EmailForm  from './multistepForms/EmailForm';
+import  PassForm  from './multistepForms/PassForm';
 import { getAuth, createUserWithEmailAndPassword, sendEmailVerification } from "firebase/auth";
 import SecondaryButton from "../../components/SecondaryButton";
 
@@ -25,8 +25,8 @@ function SignUpForm() {
 
   const { steps, currentStepIndex, step, isFirstStep, isLastStep, back, next } =
     useMultistepForm([
-      React.createElement(emailForm, { ...data, updateFields }),
-      React.createElement(passForm, { ...data, updateFields }),
+      <EmailForm {...data} updateFields={updateFields} />,
+      <PassForm {...data} updateFields={updateFields} />,
     ]);
 
 
@@ -49,6 +49,7 @@ function SignUpForm() {
           console.log(error);
         }
       } else {
+        console.log("updateFields:", updateFields);
         next();
       }
     }
@@ -61,14 +62,14 @@ function SignUpForm() {
             {currentStepIndex + 1} / {steps.length}
           </div>
           <div className="flex flex-col gap-4">
-            {step}
-            <div className='buttonContainer'>
-            <SecondaryButton  type="submit" text={isLastStep ? "Sign Up" : "Next"}/>
-            {!isFirstStep && (
-                <button className='mt-4 bg-gray-200 text-black text-center px-4 py-2 w-full rounded text-lg' type="button" onClick={back}>
-                  Back
-                </button>
-            )}
+          {step}
+      <div className='buttonContainer'>
+        <SecondaryButton type="submit" text={isLastStep ? "Sign Up" : "Next"} />
+        {!isFirstStep && (
+          <button className='mt-4 bg-gray-200 text-black text-center px-4 py-2 w-full rounded text-lg' type="button" onClick={back}>
+            Back
+          </button>
+        )}
           </div>
           </div>
         </form>

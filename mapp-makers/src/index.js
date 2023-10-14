@@ -17,7 +17,7 @@ root.render(
                 <Routes>
                     <Route exact path='/signup' element={
                         <SignInLayout page='signUp'>
-                            <App/>
+                            <SignUpForm/>
                         </SignInLayout>
                     }/>
                     <Route path='/' element={

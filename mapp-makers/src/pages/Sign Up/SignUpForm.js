@@ -5,10 +5,13 @@ import  emailForm  from './multistepForms/EmailForm';
 import  passForm  from './multistepForms/PassForm';
 import { getAuth, createUserWithEmailAndPassword, sendEmailVerification } from "firebase/auth";
 import SecondaryButton from "../../components/SecondaryButton";
+import {StepperControl} from "../../components/StepperControl";
+import {Stepper} from "../../components/Stepper";
 
 
 function SignUpForm() {
   const auth = getAuth();
+
 
   const INITIAL_DATA = {
     email: "",
@@ -22,6 +25,7 @@ function SignUpForm() {
       return { ...prev, ...fields };
     });
   }
+
 
   const { steps, currentStepIndex, step, isFirstStep, isLastStep, back, next } =
     useMultistepForm([
@@ -57,9 +61,15 @@ function SignUpForm() {
 
     return (
         <form onSubmit={onSubmit}>
-          <div className='stepCounter'>
-            {currentStepIndex + 1} / {steps.length}
-          </div>
+
+          <Stepper
+              steps = {[
+                "Enter your email address",
+                "Create your password",
+                "complete",
+              ]}
+              currentStep= {currentStepIndex + 1}
+          />
           <div className="flex flex-col gap-4">
             {step}
             <div className='buttonContainer'>

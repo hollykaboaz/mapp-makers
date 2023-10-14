@@ -3,9 +3,9 @@ import React, { useState } from 'react';
 import { useMultistepForm } from '../../hooks/useMultiForm';
 import  emailForm  from './multistepForms/EmailForm';
 import  passForm  from './multistepForms/PassForm';
+import {Final}  from './multistepForms/Final';
 import { getAuth, createUserWithEmailAndPassword, sendEmailVerification } from "firebase/auth";
 import SecondaryButton from "../../components/SecondaryButton";
-import {StepperControl} from "../../components/StepperControl";
 import {Stepper} from "../../components/Stepper";
 
 
@@ -31,6 +31,7 @@ function SignUpForm() {
     useMultistepForm([
       React.createElement(emailForm, { ...data, updateFields }),
       React.createElement(passForm, { ...data, updateFields }),
+        React.createElement(Final, { ...data, updateFields } )
     ]);
 
 
@@ -62,7 +63,7 @@ function SignUpForm() {
     return (
         <form onSubmit={onSubmit}>
 
-          <Stepper
+          <Stepper className="mb-48"
               steps = {[
                 "Enter your email address",
                 "Create your password",
@@ -73,7 +74,7 @@ function SignUpForm() {
           <div className="flex flex-col gap-4">
             {step}
             <div className='buttonContainer'>
-            <SecondaryButton  type="submit" text={isLastStep ? "Sign Up" : "Next"}/>
+            <SecondaryButton  type="submit" text={isLastStep ? "Complete" : "Next"}/>
             {!isFirstStep && (
                 <button className='mt-4 bg-gray-200 text-black text-center px-4 py-2 w-full rounded text-lg' type="button" onClick={back}>
                   Back

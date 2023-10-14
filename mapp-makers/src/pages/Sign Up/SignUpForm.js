@@ -71,7 +71,7 @@ function SignUpForm() {
               ]}
               currentStep= {currentStepIndex + 1}
           />
-          <div className="flex flex-col gap-4">
+          <div className="flex flex-col gap-4 mt-24">
             {step}
             <div className='buttonContainer'>
             <SecondaryButton  type="submit" text={isLastStep ? "Complete" : "Next"}/>

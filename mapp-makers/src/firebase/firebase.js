@@ -22,4 +22,10 @@ const app = initializeApp(firebaseConfig);
 const db = getFirestore();
 const auth = getAuth(app);
 
+// Initialize App Check with reCAPTCHA
+const appCheck = initializeAppCheck(app, {
+  provider: new ReCaptchaV3Provider('6LdhuWsoAAAAAOZzmixISGygbzcJErHKmc0tC0Ni'),
+});
+
+
 export { auth, db };

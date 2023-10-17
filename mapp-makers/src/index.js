@@ -5,7 +5,7 @@ import SignUpForm from './pages/Sign Up/SignUpForm';
 import {AuthProvider} from "./firebase/AuthContext";
 import {SignInLayout} from "./layouts/SignInLayout";
 import SignInForm from "./pages/Sign In/SignInForm"; // Import the AuthProvider
-
+import AddStudentPage from './pages/addStudentPage';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -22,6 +22,9 @@ root.render(
                         <SignInLayout page='signIn'>
                           <SignInForm/>
                         </SignInLayout>
+                    }/>
+                    <Route path='/add-student' element={ //to be added, layout for addpi
+                        <AddStudentPage />
                     }/>
                 </Routes>
             </BrowserRouter>

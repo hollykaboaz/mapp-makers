@@ -27,11 +27,11 @@ export const Final = () => {
           </div>
 
           <div className="mr-3 text-xl font-semibold uppercase text-green-500">
-            Congratulations!
+            
           </div>
-          <div className="text-lg font-semibold text-gray-500">
-            Your Account has been created.
-          </div>
+          <div className="text-lg font-semibold text-gray-500 py-10">
+              Press the complete button to send verification email.
+            </div>
           
           </div>
           </div>

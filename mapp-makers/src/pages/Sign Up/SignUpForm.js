@@ -29,20 +29,26 @@ function SignUpForm() {
       React.createElement(passForm, { ...data, updateFields }),
     ]);
 
+    const [isRecaptchaCompleted, setIsRecaptchaCompleted] = useState(false);
 
     async function onSubmit(e) {
       e.preventDefault();
   
       if (isLastStep) {
         try {
-          // Use Firebase's createUserWithEmailAndPassword to create a new user
-          await createUserWithEmailAndPassword(auth, data.email, data.password);
-          alert("Successful Account Creation");
-          await sendEmailVerification(auth.currentUser)
-            .then(() => {
-              // Email verification sent!
-              // ...
-            });
+          if (isRecaptchaCompleted){
+            // Use Firebase's createUserWithEmailAndPassword to create a new user
+            await createUserWithEmailAndPassword(auth, data.email, data.password);
+            alert("Successful Account Creation");
+            await sendEmailVerification(auth.currentUser)
+              .then(() => {
+                // Email verification sent!
+                // ...
+              });
+          } else {
+            alert("Please complete the reCaptcha before signing up.");
+          }
+          
         } catch (error) {
           // Handle any registration errors here
           alert("Registration failed. Please try again.");
@@ -63,7 +69,11 @@ function SignUpForm() {
           <div className="flex flex-col gap-4">
             {step}
             <div className='buttonContainer'>
-            <SecondaryButton  type="submit" text={isLastStep ? "Sign Up" : "Next"}/>
+            <SecondaryButton  
+              type="submit" 
+              text={isLastStep ? "Sign Up" : "Next"}
+              disabled={!isRecaptchaCompleted} //Disables the button if reCaptcha is not completed
+            />
             {!isFirstStep && (
                 <button className='mt-4 bg-gray-200 text-black text-center px-4 py-2 w-full rounded text-lg' type="button" onClick={back}>
                   Back

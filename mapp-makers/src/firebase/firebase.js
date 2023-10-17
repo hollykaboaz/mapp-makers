@@ -1,6 +1,7 @@
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
 import { getFirestore  } from "firebase/firestore";
+import { initializeAppCheck, ReCaptchaV3Provider } from '@firebase/app-check';
 
 const firebaseConfig = {
 
@@ -28,4 +29,4 @@ const appCheck = initializeAppCheck(app, {
 });
 
 
-export { auth, db };
+export { auth, db, app, appCheck};

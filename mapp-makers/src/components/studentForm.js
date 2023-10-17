@@ -7,7 +7,6 @@ function StudentForm() {
     firstName: '',
     lastName: '',
     email: '',
-    studentNumber: '',
   });
 
   const [isStudentExists, setIsStudentExists] = useState(false);
@@ -41,7 +40,6 @@ function StudentForm() {
         firstName: '',
         lastName: '',
         email: '',
-        studentNumber: '',
       });
     } catch (error) {
       console.error('Error adding student information: ', error);
@@ -79,16 +77,6 @@ function StudentForm() {
             type="email"
             name="email"
             value={formData.email}
-            onChange={handleInputChange}
-            required
-          />
-        </div>
-        <div>
-          <label>Student Number</label>
-          <input
-            type="number"
-            name="studentNumber"
-            value={formData.studentNumber}
             onChange={handleInputChange}
             required
           />

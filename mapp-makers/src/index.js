@@ -6,6 +6,7 @@ import SignUpForm from './pages/Sign Up/SignUpForm';
 import {AuthProvider} from "./firebase/AuthContext";
 import {SignInLayout} from "./layouts/SignInLayout";
 import SignInForm from "./pages/Sign In/SignInForm"; // Import the AuthProvider
+import {DashBoard} from "./pages/Dashboard/DashBoard";
 
 
 
@@ -25,6 +26,10 @@ root.render(
                           <SignInForm/>
                         </SignInLayout>
                     }/>
+                    <Route path='/Dashboard' element={// to be added to dashboard
+                    <DashBoard/>
+                    }/>
+                    
                 </Routes>
             </BrowserRouter>
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 
-function Sidebar(props) {
+function Sidebar({courses}) {
     return (
         <div className='flex flex-col border-gray-200 border-r-2 px-8 py-12 content-center gap-y-8'>
 
@@ -25,30 +25,13 @@ function Sidebar(props) {
                 </a>
             </div>
 
-            <a href='#' className='flex flex-row gap-4 items-center'>
-                <FontAwesomeIcon className='h-6 w-6 text-gray-600' icon="fa-solid fa-book-bookmark"/>
-                <div className='text-gray-500'>Software Development I</div>
-            </a>
+            {courses.map((course,index)=> {
+                return <a key={index} href='#' className='flex flex-row gap-4 items-center'>
+                    <FontAwesomeIcon className='h-6 w-6 text-gray-600' icon="fa-solid fa-book-bookmark"/>
+                    <div className='text-gray-500'>{course}</div>
+                </a>
+            })}
 
-            <a href='#' className='flex flex-row gap-4 items-center'>
-                <FontAwesomeIcon className='h-6 w-6 text-gray-600' icon="fa-solid fa-book-bookmark"/>
-                <div className='text-gray-500'>Software Development II</div>
-            </a>
-
-            <a href='#' className='flex flex-row gap-4 items-center'>
-                <FontAwesomeIcon className='h-6 w-6 text-gray-600' icon="fa-solid fa-book-bookmark"/>
-                <div className='text-gray-500'>Intermediate Programming</div>
-            </a>
-
-
-            <div href='#' className='flex flex-row w-full justify-between text-gray-400 text-sm font-light -mb-4'>
-                <div>SETTINGS</div>
-            </div>
-
-            <a href='#' className='flex flex-row gap-4 items-center'>
-                <FontAwesomeIcon className='h-6 w-6 text-gray-600' icon="fa-solid fa-gear"/>
-                <div className='text-gray-500'>Preferences</div>
-            </a>
         </div>
     );
 }

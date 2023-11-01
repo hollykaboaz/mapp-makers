@@ -10,15 +10,15 @@ import CourseBanner from "./CourseBanner";
 fontawesome.library.add(faUserGroup, faBookBookmark, faPlus, faGear);
 
 
-function Dashboard({children}) {
+function DashboardLayout({children}) {
     return (
         <div className='grid grid-cols-4 h-screen'>
-            <Sidebar/>
+            <Sidebar courses={['Software Development I', 'Software Development II','Intermediate Programming']}/>
             <div className='col-span-3'>
-                <CourseBanner courseName = 'Software Development I, Section 01'/>
+                {children}
             </div>
         </div>
     );
 }
 
-export default Dashboard;
+export default DashboardLayout;

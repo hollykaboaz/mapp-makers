@@ -14,12 +14,11 @@ function Student(props) {
                             className='font-light text-black underline'>Nov 23, 2023</span></div>
                     </div>
 
-                    <div className='col-span-3 flex flex-row gap-2'>
-                        <div className='rounded-full text-white text-xs p-2 bg-gray-500 h-fit'> Enrolled </div>
-                        <div className='rounded-full text-gray-00 text-xs border border-gray-600 p-2 h-fit'> Export Report </div>
-                        <div className='text-gray-500 text-xs p-2 h-fit'> Remove from class </div>
-
-
+                    <div className='col-span-3 flex flex-row gap-2 place-content-end'>
+                        <div className='flex flex-col'>
+                            <div className='rounded text-white text-xs px-4 py-2 bg-black'> Enrolled </div>
+                            <div className='text-red-900 text-xs p-2 h-fit underline'> Remove from class </div>
+                        </div>
                     </div>
 
                     <div className='bg-green-200 rounded-2xl col-span-3'>

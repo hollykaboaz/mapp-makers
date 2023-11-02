@@ -32,6 +32,18 @@ function Sidebar({courses}) {
                 </a>
             })}
 
+            <div href='#' className='flex flex-row w-full justify-between text-gray-400 text-sm font-light -mb-4'>
+                <div>SETTINGS</div>
+            </div>
+
+            <a href='#' className='flex flex-row gap-4 items-center'>
+                <FontAwesomeIcon className='h-6 w-6 text-gray-600' icon="fa-solid fa-gear" />
+                <div className='text-gray-500'>Settings</div>
+            </a>
+
+
+
+
         </div>
     );
 }

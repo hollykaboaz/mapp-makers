@@ -25,7 +25,7 @@ function Sidebar({courses}) {
                 </a>
             </div>
 
-            {courses.map((course,index)=> {
+            {courses.map((course, index) => {
                 return <a key={index} href='#' className='flex flex-row gap-4 items-center'>
                     <FontAwesomeIcon className='h-6 w-6 text-gray-600' icon="fa-solid fa-book-bookmark"/>
                     <div className='text-gray-500'>{course}</div>
@@ -37,12 +37,9 @@ function Sidebar({courses}) {
             </div>
 
             <a href='#' className='flex flex-row gap-4 items-center'>
-                <FontAwesomeIcon className='h-6 w-6 text-gray-600' icon="fa-solid fa-gear" />
+                <FontAwesomeIcon className='h-6 w-6 text-gray-600' icon="fa-solid fa-gear"/>
                 <div className='text-gray-500'>Settings</div>
             </a>
-
-
-
 
         </div>
     );

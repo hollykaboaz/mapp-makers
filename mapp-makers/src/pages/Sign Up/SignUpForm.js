@@ -3,12 +3,15 @@ import React, { useState } from 'react';
 import { useMultistepForm } from '../../hooks/useMultiForm';
 import  emailForm  from './multistepForms/EmailForm';
 import  passForm  from './multistepForms/PassForm';
+import {Final}  from './multistepForms/Final';
 import { getAuth, createUserWithEmailAndPassword, sendEmailVerification } from "firebase/auth";
 import SecondaryButton from "../../components/SecondaryButton";
+import {Stepper} from "../../components/Stepper";
 
 
 function SignUpForm() {
   const auth = getAuth();
+
 
   const INITIAL_DATA = {
     email: "",
@@ -23,10 +26,12 @@ function SignUpForm() {
     });
   }
 
+
   const { steps, currentStepIndex, step, isFirstStep, isLastStep, back, next } =
     useMultistepForm([
       React.createElement(emailForm, { ...data, updateFields }),
       React.createElement(passForm, { ...data, updateFields }),
+        React.createElement(Final, { ...data, updateFields } )
     ]);
 
     const [isRecaptchaCompleted, setIsRecaptchaCompleted] = useState(false);
@@ -63,10 +68,16 @@ function SignUpForm() {
 
     return (
         <form onSubmit={onSubmit}>
-          <div className='stepCounter'>
-            {currentStepIndex + 1} / {steps.length}
-          </div>
-          <div className="flex flex-col gap-4">
+
+          <Stepper className="mb-48"
+              steps = {[
+                "Enter your email address",
+                "Create your password",
+                "complete",
+              ]}
+              currentStep= {currentStepIndex + 1}
+          />
+          <div className="flex flex-col gap-4 mt-24">
             {step}
             <div className='buttonContainer'>
             <SecondaryButton  

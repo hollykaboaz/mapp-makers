@@ -1,10 +1,12 @@
 import React from 'react';
+import App from './components/App'
 import ReactDOM from 'react-dom/client';
 import {BrowserRouter, Route, Routes} from "react-router-dom";
 import SignUpForm from './pages/Sign Up/SignUpForm';
 import {AuthProvider} from "./firebase/AuthContext";
 import {SignInLayout} from "./layouts/SignInLayout";
 import SignInForm from "./pages/Sign In/SignInForm"; // Import the AuthProvider
+
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

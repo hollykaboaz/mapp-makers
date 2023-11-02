@@ -1,9 +1,7 @@
 import React, { useState } from "react";
 import FormWrapper from "../../../components/FormWrapper";
-import TextInput from "../../../components/TextInput";
 
 function EmailForm({ email, updateFields }) {
-
   return (
     <FormWrapper title="Create An Account">
       <label className="font-light text-gray-600 text-sm">Email</label>

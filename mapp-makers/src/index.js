@@ -5,7 +5,8 @@ import SignUpForm from './pages/Sign Up/SignUpForm';
 import {AuthProvider} from "./firebase/AuthContext";
 import {SignInLayout} from "./layouts/SignInLayout";
 import SignInForm from "./pages/Sign In/SignInForm";
-import Dashboard from "./pages/Dashboard/Dashboard"; // Import the AuthProvider
+import Dashboard from "./pages/Dashboard/Dashboard";
+import Student from "./pages/Student/Student"; // Import the AuthProvider
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -25,10 +26,10 @@ root.render(
                         </SignInLayout>
                     }/>
                     <Route path='/dashboard' element={
-
                         <Dashboard/>
-
-
+                    }/>
+                    <Route path='/student' element={
+                        <Student/>
                     }/>
                 </Routes>
             </BrowserRouter>

@@ -6,7 +6,6 @@ function Dashboard(props) {
     return (
         <div>
             <DashboardLayout>
-                        <CourseBanner courseName = 'Software Development I, Section 01'/>
             </DashboardLayout>
         </div>
     );

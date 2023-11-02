@@ -1,13 +1,12 @@
 import React from 'react';
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import course_background from '../assets/course_background.jpg';
-import {faBookBookmark, faGear, faPlus, faUserGroup} from "@fortawesome/free-solid-svg-icons";
+import {faBookBookmark, faChevronDown, faGear, faPlus, faUserGroup} from "@fortawesome/free-solid-svg-icons";
 import * as fontawesome from "@fortawesome/fontawesome-svg-core";
 import Sidebar from "./Sidebar";
 import CourseBanner from "./CourseBanner";
 
 
-fontawesome.library.add(faUserGroup, faBookBookmark, faPlus, faGear);
+fontawesome.library.add(faUserGroup, faBookBookmark, faPlus, faGear, faChevronDown);
 
 
 function DashboardLayout({children}) {

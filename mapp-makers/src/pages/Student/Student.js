@@ -1,5 +1,7 @@
 import React from 'react';
 import DashboardLayout from "../../components/DashboardLayout";
+import { faChevronDown} from "@fortawesome/free-solid-svg-icons";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 
 function Student(props) {
     return (
@@ -14,10 +16,16 @@ function Student(props) {
                             className='font-light text-black underline'>Nov 23, 2023</span></div>
                     </div>
 
-                    <div className='col-span-3 flex flex-row gap-2 place-content-end'>
-                        <div className='flex flex-col'>
-                            <div className='rounded text-white text-xs px-4 py-2 bg-black'> Enrolled </div>
-                            <div className='text-red-900 text-xs p-2 h-fit underline'> Remove from class </div>
+                    <div className='col-span-3'>
+                        <div className= 'flex flex-row gap-2 place-content-end'>
+                            <div className='flex flex-row gap-2 rounded text-white text-sm px-4 py-2 bg-black'>
+                                <p>Enrolled</p>
+                                <a href="">
+                                    <FontAwesomeIcon className='text-white' icon="fa-solid fa-chevron-down" />
+                                </a>
+                            </div>
+
+                            <div className='text-gray-500 font-light text-xs p-2 h-fit '> Remove from class</div>
                         </div>
                     </div>
 
@@ -31,7 +39,7 @@ function Student(props) {
 
                     <div className='bg-red-200 rounded-2xl col-span-3'>
                         <div className='p-4'>
-                            <div className='text-5xl text-red-950 '> 2 </div>
+                            <div className='text-5xl text-red-950 '> 2</div>
                             <div>Absences</div>
                         </div>
                         <div className='w-full bg-red-950 text-white rounded-b-2xl px-4 py-2'>View All</div>

@@ -15,7 +15,7 @@ function Sidebar({courses}) {
 
             <a href='#' className='flex flex-row gap-4 items-center'>
                 <FontAwesomeIcon className='h-4 w-4 text-gray-600' icon="fa-solid fa-user-group"/>
-                <div className='text-gray-500 font-light'>Students</div>
+                <div className='text-gray-500 font-light hover:text-green-600'>Students</div>
             </a>
 
             <div href='#' className='flex flex-row w-full justify-between text-gray-400 text-sm font-light -mb-4'>
@@ -28,7 +28,7 @@ function Sidebar({courses}) {
             {courses.map((course, index) => {
                 return <a key={index} href='#' className='flex flex-row gap-4 items-center'>
                     <FontAwesomeIcon className='h-4 w-4 text-gray-600' icon="fa-solid fa-book-bookmark"/>
-                    <div className='text-gray-500 font-light'>{course}</div>
+                    <div className='text-gray-500 font-light hover:text-green-600'>{course}</div>
                 </a>
             })}
 
@@ -38,7 +38,7 @@ function Sidebar({courses}) {
 
             <a href='#' className='flex flex-row gap-4 items-center'>
                 <FontAwesomeIcon className='h-4 w-4 text-gray-600' icon="fa-solid fa-gear"/>
-                <div className='text-gray-500 font-light'>Settings</div>
+                <div className='text-gray-500 font-light hover:text-green-600'>Settings</div>
             </a>
 
         </div>

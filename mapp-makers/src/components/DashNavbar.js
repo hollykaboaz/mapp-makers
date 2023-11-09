@@ -2,30 +2,45 @@ import React, {useState} from 'react'
 
 
 export const DashNavbar = () => {
-  const [selectedItem, setSelectedItem] = useState(null);
+    const [selectedItem, setSelectedItem] = useState(null);
 
-  const handleItemClick = (item) => {
-    setSelectedItem(item);
-  };
-  return (
-    <div className= "items-center pr-5 border-b-[0.5px] border-b-stone-400 border-solid">
-      <div className='flex w-[323px] max-w-full items-start justify-between gap-5 mt-2.5 max-md:justify-center pl-5' >
-     
-      <div 
-      className={` text-base self-stretch ${selectedItem === 'Classes' ? 'text-black border-b-2 border-green-500' : 'text-gray-400'} 
-                ${selectedItem !== 'Classes'? 'hover:text-slate-500 hover:text-lg hover:border-b-2 hover:border-green-500': ''}`}
-      onClick= {() => handleItemClick('Classes')}
-      > Classes</div>
-      <div
-      className={` text-base self-stretch ${selectedItem === 'Students' ? 'text-black border-b-2 border-green-500' : 'text-gray-400'}
-                ${selectedItem !== 'Students'? 'hover:text-slate-500 hover:text-lg hover:border-b-2 hover:border-green-500': ''}`}
-      onClick= {() => handleItemClick('Students')}
-      > Students</div>
-      <div className={` text-base self-stretch ${selectedItem === 'Attendance' ? 'text-black border-b-2 border-green-500' : 'text-gray-400'}
-                 ${selectedItem !== 'Attendance'? 'hover:text-slate-500 hover:text-lg hover:border-b-2 hover:border-green-500': ''}`}
-      onClick= {() => handleItemClick('Attendance')}
-      > Attendance</div>
-      </div>
-      </div>
+    const handleItemClick = (item) => {
+        setSelectedItem(item);
+        console.log(selectedItem)
+    };
+
+    return (
+
+        <div className="navbar font-light">
+            <a className = { selectedItem === 'Classes' ? 'font-medium nav-link nav-link-grow-up' : 'nav-link nav-link-grow-up'}
+               onClick= {() => handleItemClick('Classes')}  href="#">Classes</a>
+            <a  className = { selectedItem === 'Students' ? 'font-medium nav-link nav-link-grow-up' : 'nav-link nav-link-grow-up'} onClick= {() => handleItemClick('Students')} href="#">Students</a>
+            <a  className = { selectedItem === 'Attendance' ? 'font-medium nav-link nav-link-grow-up' : 'nav-link nav-link-grow-up'}
+                onClick= {() => handleItemClick('Attendance')} href="#">Attendance</a>
+        </div>
+
+
+        // <div className="mt-2 items-center border-b border-gray-200 border-solid">
+        //     <div
+        //         className='flex w-full items-start gap-12 max-md:justify-center mt-8 font-light '>
+        //
+        //         <div className={`absolute text-base self-stretch ${selectedItem === 'Classes' ? 'text-black border-b-2 border-green-500' : 'text-gray-400'}
+        //         ${selectedItem !== 'Classes' ? 'hover:text-gray-900 hover:font-medium hover:border-b-2 hover:border-green-500' : ''}`}
+        //             onClick={() => handleItemClick('Classes')}>
+        //             Classes
+        //         </div>
+        //         <div className={` text-base self-stretch ${selectedItem === 'Students' ? 'text-black border-b-2 border-green-500' : 'text-gray-400'}
+        //         ${selectedItem !== 'Students' ? 'hover:text-gray-900 hover:font-medium hover:border-b-2 hover:border-green-500' : ''}`}
+        //             onClick={() => handleItemClick('Students')}
+        //         > Students
+        //         </div>
+        //         <div
+        //             className={` text-base self-stretch ${selectedItem === 'Attendance' ? 'text-black border-b-2 border-green-500' : 'text-gray-400'}
+        //          ${selectedItem !== 'Attendance' ? 'hover:text-gray-900 hover:font-medium hover:border-b-2 hover:border-green-500' : ''}`}
+        //             onClick={() => handleItemClick('Attendance')}
+        //         > Attendance
+        //         </div>
+        //     </div>
+        // </div>
     );
 }

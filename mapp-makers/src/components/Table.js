@@ -10,7 +10,7 @@ export const Table = (props) => {
     {
       name: '',
       cell: row => (
-        <div className=" h-8 w-8 overflow-hidden">
+        <div className=" h-8 w-8 p-8 overflow-hidden">
           <img className="h-full w-full object-cover rounded-full" 
           src={row.image || defaultImage} 
           alt={row.firstName} />
@@ -57,9 +57,7 @@ export const Table = (props) => {
  
 
   return (
-    <div className='container m-5 p-5  w-4/5'>
-      <div className='text-end'><input type="text"></input></div>
-      
+    <div className='container mt-5 border rounded-2xl border-gray-200'>
       <DataTable
         columns= {columns}
         data = {props.data}
@@ -67,10 +65,7 @@ export const Table = (props) => {
         fixedHeader
         pagination
         >
-
       </DataTable>
-      
-      
       </div>
   );
 }

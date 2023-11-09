@@ -38,7 +38,7 @@ function Sidebar({courses}) {
 
             <a href='#' className='flex flex-row gap-4 items-center'>
                 <FontAwesomeIcon className='h-4 w-4 text-gray-600' icon="fa-solid fa-gear"/>
-                <div className='text-gray-500'>Settings</div>
+                <div className='text-gray-500 font-light'>Settings</div>
             </a>
 
         </div>

@@ -21,7 +21,7 @@ export const DashNavbar = () => {
                     onClick= {() => handleItemClick('Attendance')} href="#">Attendance</a>
             </div>
 
-            <a href='#' className='flex flex-row gap-2 rounded text-white text-sm p-2 bg-black items-center mb-2'>
+            <a href='#' className='flex flex-row gap-2 rounded text-white text-xs p-2 bg-black items-center mb-2'>
                 <p>Add Student</p>
                 <a href="">
                     <FontAwesomeIcon icon="fa-solid fa-plus"/>

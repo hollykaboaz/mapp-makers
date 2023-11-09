@@ -27,31 +27,10 @@ export const DashNavbar = () => {
                     <FontAwesomeIcon icon="fa-solid fa-plus"/>
                 </a>
             </a>
+
         </div>
 
 
 
-        // <div className="mt-2 items-center border-b border-gray-200 border-solid">
-        //     <div
-        //         className='flex w-full items-start gap-12 max-md:justify-center mt-8 font-light '>
-        //
-        //         <div className={`absolute text-base self-stretch ${selectedItem === 'Classes' ? 'text-black border-b-2 border-green-500' : 'text-gray-400'}
-        //         ${selectedItem !== 'Classes' ? 'hover:text-gray-900 hover:font-medium hover:border-b-2 hover:border-green-500' : ''}`}
-        //             onClick={() => handleItemClick('Classes')}>
-        //             Classes
-        //         </div>
-        //         <div className={` text-base self-stretch ${selectedItem === 'Students' ? 'text-black border-b-2 border-green-500' : 'text-gray-400'}
-        //         ${selectedItem !== 'Students' ? 'hover:text-gray-900 hover:font-medium hover:border-b-2 hover:border-green-500' : ''}`}
-        //             onClick={() => handleItemClick('Students')}
-        //         > Students
-        //         </div>
-        //         <div
-        //             className={` text-base self-stretch ${selectedItem === 'Attendance' ? 'text-black border-b-2 border-green-500' : 'text-gray-400'}
-        //          ${selectedItem !== 'Attendance' ? 'hover:text-gray-900 hover:font-medium hover:border-b-2 hover:border-green-500' : ''}`}
-        //             onClick={() => handleItemClick('Attendance')}
-        //         > Attendance
-        //         </div>
-        //     </div>
-        // </div>
     );
 }

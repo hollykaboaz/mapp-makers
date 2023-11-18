@@ -7,7 +7,6 @@ import { useContext, useState } from 'react';
 
 
 
-
 function App() {
 const [currentStep, setCurrentStep] = useState(1);
 const [userData, setUserData]  = useState("");
@@ -56,7 +55,6 @@ const [finalData, setFinalData] = useState([]);
     handleClick = {handleClick}
     currentStep = {currentStep}
     steps={steps}
-    
     />
     </div>
     

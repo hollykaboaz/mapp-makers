@@ -3,13 +3,18 @@ import { DashNavbar } from '../../components/DashNavbar'
 import {Table} from '../../components/Table'
 import sImage from "../../assets/avatar.png";
 import { CourseHeader } from '../../components/CourseHeader';
-
+import { MultipurposeButton } from '../../components/MultipurposeButton';
+import {Modal} from '../../components/Modal';
+import { useState } from 'react';
+import SecondaryButton from '../../components/SecondaryButton';
+import StudentForm from '../../components/studentForm';
 
 export const DashBoard = () => {
 
 const courseName = "Software Dev,";// need to fix how these will be passed through the db and the App
 const courseSection= " Section 2";
 const customImage = sImage;
+const [isOpen, setIsOpen] = useState(false);
 
 
   const data = [
@@ -45,6 +50,7 @@ const customImage = sImage;
     },
 
   ] 
+
   return (
     <>
       <DashNavbar/>
@@ -52,7 +58,10 @@ const customImage = sImage;
       {/*customImage={sImage}*/}
 
       <Table data={data}/> 
-
+      <MultipurposeButton onClick={() => setIsOpen(true)}text={"Add Student"} />
+      <Modal open={isOpen} onClose={()=>setIsOpen(false)}>
+        <StudentForm/>
+      </Modal>
     </>
-  )
-}
+  );
+};

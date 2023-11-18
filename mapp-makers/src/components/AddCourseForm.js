@@ -86,39 +86,46 @@ function AddCourseForm() {
   };
 
   return (
-    <div>
-      <h2>Add Course</h2>
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label>Course Name</label>
-          <input
-            type="text"
-            name="courseName"
-            value={formData.courseName}
-            onChange={handleInputChange}
-            required
-          />
-        </div>
-        <div>
-          <label>Course Number</label>
-          <input
-            type="text"
-            name="courseNumber"
-            value={formData.courseNumber}
-            onChange={handleInputChange}
-            required
-          />
-        </div>
-        <button type="submit">Add Course</button>
-      </form>
+    <div className="w-[300px] h-[300px] mx-auto mt-8">
+    <h2 className="text-2xl font-bold mb-4">Add Course</h2>
+    <form onSubmit={handleSubmit} className="space-y-4">
+      <div>
+        <label className="block text-sm font-medium text-gray-700">Course Name</label>
+        <input
+          type="text"
+          name="courseName"
+          value={formData.courseName}
+          onChange={handleInputChange}
+          className="mt-1 p-2 w-full border rounded-md"
+          required
+        />
+      </div>
+      <div>
+        <label className="block text-sm font-medium text-gray-700">Course Number</label>
+        <input
+          type="text"
+          name="courseNumber"
+          value={formData.courseNumber}
+          onChange={handleInputChange}
+          className="mt-1 p-2 w-full border rounded-md"
+          required
+        />
+      </div>
+      <button
+        type="submit"
+        className="bg-blue-500 text-white p-2 rounded-md hover:bg-blue-600 self-start mb-4"
+      >
+        Confirm
+      </button>
+    </form>
 
-      {isCourseExists && (
-        <p className="text-red-500">
-          This course already exists in the database.
-        </p>
-      )}
-    </div>
-  );
+    {isCourseExists && (
+      <p className="text-red-500 mt-4">
+        This course already exists in the database.
+      </p>
+    )}
+  </div>
+);
 }
 
 export default AddCourseForm;

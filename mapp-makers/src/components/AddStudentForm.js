@@ -48,44 +48,52 @@ function AddStudentForm() {
   };
 
   return (
-    <div>
-      <h2>Add Student</h2>
-      <form onSubmit={handleSubmit}>
+    <div className="w-[300px] h-[300px] mx-auto mt-8">
+      <h2 className="text-2xl font-bold mb-4">Add Student</h2>
+      <form onSubmit={handleSubmit} className="space-y-4">
         <div>
-          <label>First Name</label>
+          <label className="block text-sm font-medium text-gray-700">First Name</label>
           <input
             type="text"
             name="firstName"
             value={formData.firstName}
             onChange={handleInputChange}
+            className="mt-1 p-2 w-full border rounded-md"
             required
           />
         </div>
         <div>
-          <label>Last Name</label>
+          <label className="block text-sm font-medium text-gray-700">Last Name</label>
           <input
             type="text"
             name="lastName"
             value={formData.lastName}
             onChange={handleInputChange}
+            className="mt-1 p-2 w-full border rounded-md"
             required
           />
         </div>
         <div>
-          <label>Email</label>
+          <label className="block text-sm font-medium text-gray-700">Email</label>
           <input
             type="email"
             name="email"
             value={formData.email}
             onChange={handleInputChange}
+            className="mt-1 p-2 w-full border rounded-md"
             required
           />
         </div>
-        <button type="submit">Add Student</button>
+        <button
+          type="submit"
+          className="bg-blue-500 text-white p-2 rounded-md hover:bg-blue-600 self-start mb-4"
+        >
+          confirm
+        </button>
       </form>
 
       {isStudentExists && (
-        <p className="text-red-500">
+        <p className="text-red-500 mt-4">
           This student already exists in the database.
         </p>
       )}

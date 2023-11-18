@@ -1,7 +1,22 @@
 import React from 'react';
+import { useState } from 'react';
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {Modal} from "./Modal";
+import AddCourseForm from "./AddCourseForm";
 
 function Sidebar({courses}) {
+    const [isAddCourseModalOpen, setAddCourseModalOpen] = useState(false);
+
+  const openAddCourseModal = () => {
+    setAddCourseModalOpen(true);
+  };
+
+  const closeAddCourseModal = () => {
+    setAddCourseModalOpen(false);
+  };
+
+
+
     return (
         <div className='flex flex-col border-gray-200 border-r-2 px-8 py-12 content-center gap-y-8'>
 
@@ -17,12 +32,15 @@ function Sidebar({courses}) {
                 <FontAwesomeIcon className='h-4 w-4 text-gray-600' icon="fa-solid fa-user-group"/>
                 <div className='text-gray-500 font-light hover:text-green-600'>Students</div>
             </a>
+            <Modal open={isAddCourseModalOpen} onClose={closeAddCourseModal}>
+                <AddCourseForm />
+            </Modal>
 
             <div href='#' className='flex flex-row w-full justify-between text-gray-400 text-sm font-light -mb-4'>
                 <div>MY COURSES</div>
-                <a href="">
-                    <FontAwesomeIcon icon="fa-solid fa-plus"/>
-                </a>
+                <button onClick={openAddCourseModal}>
+          <FontAwesomeIcon icon="fa-solid fa-plus"/>
+        </button>
             </div>
 
             {courses.map((course, index) => {

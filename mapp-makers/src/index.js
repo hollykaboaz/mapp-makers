@@ -8,6 +8,7 @@ import SignInForm from "./pages/Sign In/SignInForm";
 import Dashboard from "./pages/Dashboard/Dashboard";
 import Student from "./pages/Student/Student";
 import DashboardLayout from "./components/DashboardLayout"; // Import the AuthProvider
+import AddCourseForm from "./components/AddCourseForm";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -34,6 +35,11 @@ root.render(
                     <Route path='/student' element={
                         <Student/>
                     }/>
+                    <Route path='/addcourse' element={
+                        <AddCourseForm/>
+                    }/>
+
+                    
                 </Routes>
             </BrowserRouter>
 

@@ -4,6 +4,8 @@ import {Table} from '../../components/Table'
 import sImage from "../../assets/avatar.png";
 import { CourseHeader } from '../../components/CourseHeader';
 import Student from "../Student/Student";
+import CourseBanner from "../../components/CourseBanner";
+import DashboardLayout from "../../components/DashboardLayout";
 
 
 function Dashboard() {
@@ -48,8 +50,13 @@ const customImage = sImage;
   ] 
   return (
     <>
-      <DashNavbar/>
-      <Table data={data}/> 
+      <DashboardLayout>
+        <CourseBanner></CourseBanner>
+        <div className='mx-12 py-4'>
+          <Table data={data}/>
+        </div>
+      </DashboardLayout>
+
 
     </>
   )

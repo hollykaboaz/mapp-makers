@@ -7,7 +7,8 @@ import {SignInLayout} from "./layouts/SignInLayout";
 import SignInForm from "./pages/Sign In/SignInForm";
 import Dashboard from "./pages/Dashboard/Dashboard";
 import Student from "./pages/Student/Student";
-import DashboardLayout from "./components/DashboardLayout"; // Import the AuthProvider
+import DashboardLayout from "./components/DashboardLayout";
+import Class from "./pages/Class/Class"; // Import the AuthProvider
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -26,13 +27,13 @@ root.render(
                         </SignInLayout>
                     }/>
                     <Route path='/dashboard' element={
-                        <DashboardLayout>
                             <Dashboard/>
-                        </DashboardLayout>
-
                     }/>
                     <Route path='/student' element={
                         <Student/>
+                    }/>
+                    <Route path='/class' element={
+                        <Class></Class>
                     }/>
                 </Routes>
             </BrowserRouter>

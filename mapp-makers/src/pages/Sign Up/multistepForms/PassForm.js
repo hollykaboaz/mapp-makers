@@ -1,7 +1,5 @@
 import React from "react";
 import FormWrapper from "../../../components/FormWrapper";
-import TextInput from "../../../components/TextInput";
-import ReCAPTCHA from "react-google-recaptcha"; // Import the ReCAPTCHA component
 
 function passForm({ password, updateFields, isRecaptchaVerified, handleRecaptchaVerify }) {
   return (

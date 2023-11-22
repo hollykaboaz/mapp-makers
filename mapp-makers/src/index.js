@@ -27,7 +27,7 @@ root.render(
                         </SignInLayout>
                     }/>
                     <Route path='/dashboard' element={
-                        <DashboardLayout>
+                        <DashboardLayout >
                             <Dashboard/>
                         </DashboardLayout>
 

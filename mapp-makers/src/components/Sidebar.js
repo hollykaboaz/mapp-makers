@@ -4,7 +4,7 @@ import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {Modal} from "./Modal";
 import AddCourseForm from "./AddCourseForm";
 
-function Sidebar({courses}) {
+function Sidebar({ courses, onCourseSelect }) {
     const [isAddCourseModalOpen, setAddCourseModalOpen] = useState(false);
 
   const openAddCourseModal = () => {
@@ -15,7 +15,9 @@ function Sidebar({courses}) {
     setAddCourseModalOpen(false);
   };
 
-
+  const handleCourseSelection = (courseTitle) => {
+    onCourseSelect(courseTitle); // Pass the selected course to the parent component
+  };
 
     return (
         <div className='flex flex-col border-gray-200 border-r-2 px-8 py-12 content-center gap-y-8'>
@@ -44,7 +46,7 @@ function Sidebar({courses}) {
             </div>
 
             {courses.map((course, index) => {
-                return <a key={index} href='#' className='flex flex-row gap-4 items-center'>
+                return <a key={index} href='#' className='flex flex-row gap-4 items-center' onClick={() => handleCourseSelection(course)}>
                     <FontAwesomeIcon className='h-4 w-4 text-gray-600' icon="fa-solid fa-book-bookmark"/>
                     <div className='text-gray-500 font-light hover:text-green-600'>{course}</div>
                 </a>

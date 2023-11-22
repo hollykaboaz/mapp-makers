@@ -9,9 +9,6 @@ import { useState, useEffect } from 'react';
 import { 
   getFirestore,  // Importing Firestore functionalities
   collection,    // For creating a collection reference
-  addDoc,        // For adding documents to Firestore
-  query,         // For querying Firestore
-  where,         // For specifying conditions in Firestore queries
   getDocs        // For getting documents from Firestore
 } from 'firebase/firestore';
 
@@ -20,6 +17,14 @@ fontawesome.library.add(faUserGroup, faBookBookmark, faPlus, faGear, faChevronDo
 
 // Main DashboardLayout component
 function DashboardLayout({ children }) {
+  const [selectedCourse, setSelectedCourse] = useState(null);
+  
+
+  // Function to handle course selection
+  const handleCourseSelection = (courseTitle) => {
+    setSelectedCourse(courseTitle);
+  };
+
   // State to manage courses data
   const [courses, setCourses] = useState([]);
 
@@ -50,22 +55,17 @@ function DashboardLayout({ children }) {
     fetchCourses();
   }, []); // The empty dependency array ensures that this effect runs once when the component mounts
     
-  // Function to add a new course
-  const addCourse = (newCourse) => {
-    setCourses([...courses, newCourse]);
-  };
-
   // JSX structure of the DashboardLayout component
   return (
     <div className='grid grid-cols-4 h-screen'>
       {/* Sidebar component with courses data */}
-      <Sidebar courses={courses} />
+      <Sidebar courses={courses} onCourseSelect={handleCourseSelection} />
 
       {/* Main content area */}
       <div className='col-span-3'>
         {/* Banner displaying course information */}
-        <CourseBanner courseName='Software Development I, Section 01' />
-        
+        {selectedCourse && <CourseBanner courseName={selectedCourse} />} {/* Display selected course name */}
+
         <div className='mx-12 my-4'>
           {/* Nested components or content received as children */}
           {children}

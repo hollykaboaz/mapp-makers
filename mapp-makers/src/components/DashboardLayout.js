@@ -55,7 +55,7 @@ function DashboardLayout({ children }) {
     fetchCourses();
   }, []); // The empty dependency array ensures that this effect runs once when the component mounts
     
-  // JSX structure of the DashboardLayout component
+  // Structure of the DashboardLayout component
   return (
     <div className='grid grid-cols-4 h-screen'>
       {/* Sidebar component with courses data */}

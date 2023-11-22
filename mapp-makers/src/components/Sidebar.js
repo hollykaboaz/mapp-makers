@@ -16,7 +16,7 @@ function Sidebar({ courses, onCourseSelect }) {
   };
 
   const handleCourseSelection = (courseTitle) => {
-    onCourseSelect(courseTitle); // Pass the selected course to the parent component
+    onCourseSelect(courseTitle); // Pass the selected course to the DashboardLayout component
   };
 
     return (

@@ -4,7 +4,7 @@ import { faBookBookmark, faChevronDown, faGear, faPlus, faUserGroup } from "@for
 import * as fontawesome from "@fortawesome/fontawesome-svg-core";
 import Sidebar from "./Sidebar";
 import CourseBanner from "./CourseBanner";
-import AddCourseForm from './AddCourseForm';
+
 import { useState, useEffect } from 'react';
 import { 
   getFirestore,  // Importing Firestore functionalities

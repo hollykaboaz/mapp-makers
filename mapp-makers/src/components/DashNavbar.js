@@ -1,5 +1,9 @@
 import React, {useState} from 'react'
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import AddStudentForm from './AddStudentForm';
+import { MultipurposeButton } from './MultipurposeButton';
+import {Modal} from './Modal';
+
 
 
 export const DashNavbar = () => {
@@ -9,6 +13,7 @@ export const DashNavbar = () => {
         setSelectedItem(item);
         console.log(selectedItem)
     };
+    const [isOpen, setIsOpen] = useState(false);
 
     return (
 
@@ -21,13 +26,10 @@ export const DashNavbar = () => {
                     onClick= {() => handleItemClick('Attendance')} href="#">Attendance</a>
             </div>
 
-            <a href='#' className='flex flex-row gap-2 rounded text-white text-xs p-2 bg-black items-center mb-2'>
-                <p>Add Student</p>
-                <a href="">
-                    <FontAwesomeIcon icon="fa-solid fa-plus"/>
-                </a>
-            </a>
-
+            <button  className='flex flex-row gap-2 rounded text-white text-xs p-2 bg-black items-center mb-2'onClick={() => setIsOpen(true)}>Add Student</button>
+      <Modal open={isOpen} onClose={()=>setIsOpen(false)}>
+        <AddStudentForm/>
+      </Modal>
         </div>
 
 

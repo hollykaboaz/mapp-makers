@@ -8,6 +8,8 @@ import SignInForm from "./pages/Sign In/SignInForm";
 import Dashboard from "./pages/Dashboard/Dashboard";
 import Student from "./pages/Student/Student";
 import DashboardLayout from "./components/DashboardLayout"; // Import the AuthProvider
+import AddCourseForm from "./components/AddCourseForm";
+import { AboutSection } from './components/AboutSection';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -26,7 +28,7 @@ root.render(
                         </SignInLayout>
                     }/>
                     <Route path='/dashboard' element={
-                        <DashboardLayout>
+                        <DashboardLayout >
                             <Dashboard/>
                         </DashboardLayout>
 
@@ -34,6 +36,15 @@ root.render(
                     <Route path='/student' element={
                         <Student/>
                     }/>
+                    <Route path='/about' element={
+                        <SignInLayout page='signIn'>
+
+                        <AboutSection/>
+                        </SignInLayout>
+
+                    }/>
+
+                    
                 </Routes>
             </BrowserRouter>
 

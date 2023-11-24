@@ -47,6 +47,12 @@ function DashboardLayout({ children }) {
           return `${courseData.title}. Section: ${courseData.section}`;
         });
         setCourses(coursesData);
+
+        // Set the first course as the selected course when courses are loaded
+        if (coursesData.length > 0 && !selectedCourse) {
+          setSelectedCourse(coursesData[0]);
+        }
+      
       });
         // Cleanup the subscription when the component unmounts
         return () => unsubscribe();

@@ -4,9 +4,10 @@ import FormWrapper from "../../../components/FormWrapper";
 function passForm({ password, updateFields }) {
   return (
     <FormWrapper title="Create An Account">
-            <label className='font-light text-gray-600 text-sm'>Password</label>
+            <label htmlFor="password-input" className='font-light text-gray-600 text-sm'>Password</label>
             <input
                 required
+                id="password-input"
                 type="password"
                 value={password}
                 onChange={(e) => updateFields({ password: e.target.value })}

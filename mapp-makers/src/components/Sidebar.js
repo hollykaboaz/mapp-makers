@@ -40,9 +40,9 @@ function Sidebar({ courses, onCourseSelect }) {
 
             <div href='#' className='flex flex-row w-full justify-between text-gray-400 text-sm font-light -mb-4'>
                 <div>MY COURSES</div>
-                <button onClick={openAddCourseModal}>
-          <FontAwesomeIcon icon="fa-solid fa-plus"/>
-        </button>
+                <button onClick={openAddCourseModal} aria-label="Add Course">
+                    <FontAwesomeIcon icon="fa-solid fa-plus"/>
+                </button>
             </div>
 
             {courses.map((course, index) => {

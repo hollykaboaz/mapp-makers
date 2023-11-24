@@ -7,7 +7,6 @@ import {
   where,         // For specifying conditions in Firestore queries
   getDocs        // For getting documents from Firestore
 } from 'firebase/firestore';
-import { getAuth } from 'firebase/auth';
 
 function AddCourseForm() {
   // State variables to manage form data and course existence status
@@ -15,7 +14,7 @@ function AddCourseForm() {
     title: '',
     section: '',
   });
-  const [isCourseExists, setIsCourseExists] = useState(false);
+  const [errorMessage, setErrorMessage] = useState('');
 
   // Function to handle form input changes
   const handleInputChange = (e) => {
@@ -36,13 +35,14 @@ function AddCourseForm() {
       // Query Firestore to check if the course already exists based on section
       const querySnapshot = await getDocs(query(coursesRef, where('section', '==', formData.section)));
 
-      if (querySnapshot.empty) {
+      if (querySnapshot && querySnapshot.docs && querySnapshot.docs.length === 0) {
         // Course does not exist, so add it to Firestore
         const docRef = await addDoc(coursesRef, formData);
         alert('Course information added successfully with ID: ' + docRef.id);
+        console.log('Course information added successfully with ID: ' + docRef.id);
       } else {
         // Set flag if the course already exists
-        setIsCourseExists(true);
+        setErrorMessage('This course already exists in the database.');
       }
 
       // Clear the form data after submission
@@ -52,7 +52,7 @@ function AddCourseForm() {
       });
     } catch (error) {
       console.error('Error adding course information: ', error);
-      alert('An error occurred while adding course information. Please try again.');
+      setErrorMessage('An error occurred while adding course information. Please try again.');
     }
   };
 
@@ -62,8 +62,9 @@ function AddCourseForm() {
       <h2 className="text-2xl font-bold mb-4">Add Course</h2>
       <form onSubmit={handleSubmit} className="space-y-4">
         <div>
-          <label className="block text-sm font-medium text-gray-700">Course Title</label>
+          <label htmlFor="title" className="block text-sm font-medium text-gray-700">Course Title</label>
           <input
+            id="title"
             type="text"
             name="title"
             value={formData.title}
@@ -73,8 +74,9 @@ function AddCourseForm() {
           />
         </div>
         <div>
-          <label className="block text-sm font-medium text-gray-700">Course Section</label>
+          <label htmlFor="section" className="block text-sm font-medium text-gray-700">Course Section</label>
           <input
+            id="section"
             type="text"
             name="section"
             value={formData.section}
@@ -92,9 +94,9 @@ function AddCourseForm() {
       </form>
 
       {/* Display error message if course already exists */}
-      {isCourseExists && (
+      {errorMessage && (
         <p className="text-red-500 mt-4">
-          This course already exists in the database.
+          {errorMessage}
         </p>
       )}
     </div>

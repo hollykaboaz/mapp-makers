@@ -21,18 +21,22 @@ export const MultipurposeButton = (props) => {
     }
   }
 
+   // Render content based on the provided text or default content if none is provided
+   const renderedText = props.text || 'Default Text';
 
 
-  return (
-    <div className={`flex flex-col px-1 rounded-2xl min-w-[50px] max-w-[150px] ${getColorClass()} 
-    ${isActive ? 'bg-opacity-75' : ''}
-     hover:bg-opacity-70 cursor-pointer`}onClick={props.onClick}>
-
-    <div className={`text-sm self-center whitespace-normal px-1  mt-1.5 mb-2 min-w-[50px] max-w-[1500px] flex-shrink-0'`}>
-      {props.text}
-      
+   return (
+    <div
+      className={`flex flex-col px-1 rounded-2xl min-w-[50px] max-w-[150px] ${getColorClass()} ${
+        isActive ? 'bg-opacity-75' : ''
+      } hover:bg-opacity-70 cursor-pointer`}
+      onClick={props.onClick}
+    >
+      <div className="text-sm self-center whitespace-normal px-1 mt-1.5 mb-2 min-w-[50px] max-w-[1500px] flex-shrink-0">
+        {renderedText}
+      </div>
+      {/* Adding an additional identifier for the default scenario */}
+      {!props.text && <span data-testid="default-content-identifier">Default Content Identifier</span>}
     </div>
-
-    </div>
-  )
-}
+  );
+};

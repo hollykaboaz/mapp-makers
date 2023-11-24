@@ -115,8 +115,9 @@ function AddStudentForm() {
       <h2 className="text-2xl font-bold mb-4">Add Student</h2>
       <form onSubmit={handleSubmit} className="space-y-4">
         <div>
-          <label className="block text-sm font-medium text-gray-700">First Name</label>
+          <label htmlFor="firstName" className="block text-sm font-medium text-gray-700">First Name</label>
           <input
+            id="firstName"
             type="text"
             name="firstName"
             value={formData.firstName}
@@ -126,8 +127,9 @@ function AddStudentForm() {
           />
         </div>
         <div>
-          <label className="block text-sm font-medium text-gray-700">Last Name</label>
+          <label htmlFor="lastName" className="block text-sm font-medium text-gray-700">Last Name</label>
           <input
+            id="lastName"
             type="text"
             name="lastName"
             value={formData.lastName}
@@ -137,8 +139,9 @@ function AddStudentForm() {
           />
         </div>
         <div>
-          <label className="block text-sm font-medium text-gray-700">Email</label>
+          <label htmlFor="email" className="block text-sm font-medium text-gray-700">Email</label>
           <input
+            id="email"
             type="email"
             name="email"
             value={formData.email}

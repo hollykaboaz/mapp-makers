@@ -11,6 +11,12 @@ function SignInForm() {
     const [password, setPassword] = useState('');
     // const history = useHistory(); // Commented out for future routing
 
+    const CustomAlert = ({ message }) => {
+        // Your custom alert logic here
+        return <div>{message}</div>;
+      };
+
+
     const handleSignIn = async (e) => {
         e.preventDefault();
 
@@ -21,10 +27,10 @@ function SignInForm() {
             // history.push('/dashboard');
 
             const timestamp = new Date().toLocaleString();
-            alert(`User has been logged in at ${timestamp}.`);
+            return <CustomAlert message={`User has been logged in at ${timestamp}.`} />;
         } catch (error) {
             console.error('Sign-in error:', error.message);
-            alert(`Sign-in error: ${error.message}`);
+            return <CustomAlert message={`Sign-in error: ${error.message}`} />;
         }
     };
 

@@ -9,6 +9,7 @@ import { useState, useEffect } from 'react';
 import { 
   getFirestore,  // Importing Firestore functionalities
   collection,    // For creating a collection reference
+  onSnapshot,
   getDocs        // For getting documents from Firestore
 } from 'firebase/firestore';
 
@@ -18,7 +19,6 @@ fontawesome.library.add(faUserGroup, faBookBookmark, faPlus, faGear, faChevronDo
 // Main DashboardLayout component
 function DashboardLayout({ children }) {
   const [selectedCourse, setSelectedCourse] = useState(null);
-  
 
   // Function to handle course selection
   const handleCourseSelection = (courseTitle) => {
@@ -36,9 +36,9 @@ function DashboardLayout({ children }) {
 
         // Reference to the 'Courses' collection under 'testUser'
         const coursesCollection = collection(db, 'Users', 'testUser', 'Courses');
-
-        // Fetching documents from the 'Courses' collection
-        const coursesSnapshot = await getDocs(coursesCollection);
+        // Use onSnapshot to listen for changes in the collection
+        const unsubscribe = onSnapshot(coursesCollection, (coursesSnapshot) => {
+       
 
         // Extracting course data and setting it in the state
         const coursesData = coursesSnapshot.docs.map((doc) => {
@@ -46,6 +46,16 @@ function DashboardLayout({ children }) {
           return `${courseData.title}. Section: ${courseData.section}`;
         });
         setCourses(coursesData);
+
+
+        // Set the first course as the selected course when courses are loaded
+        if (coursesData.length > 0 && !selectedCourse) {
+          setSelectedCourse(coursesData[0]);
+        }
+      });
+
+      // Cleanup the subscription when the component unmounts
+      return () => unsubscribe();
       } catch (error) {
         console.error('Error fetching courses: ', error);
       }
@@ -53,7 +63,7 @@ function DashboardLayout({ children }) {
 
     // Fetch courses when the component mounts (runs once)
     fetchCourses();
-  }, []); // The empty dependency array ensures that this effect runs once when the component mounts
+  }, [selectedCourse]); // The empty dependency array ensures that this effect runs once when the component mounts
     
   // Structure of the DashboardLayout component
   return (

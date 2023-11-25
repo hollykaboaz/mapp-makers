@@ -17,6 +17,7 @@ function Class(props) {
             },
             fps: 5
         })
+
         scanner.render(success, error);
 
         function success(result) {
@@ -44,12 +45,8 @@ function Class(props) {
     return (
         <div className=' py-4'>
 
-            <div className='col-span-3'>
-                {scanResult ? <div> Success: <a href={scanResult}>Result</a></div> : <div id="reader"></div>}
-            </div>
 
             <div className='grid grid-rows-1 grid-cols-3 gap-16'>
-
 
                 <div className='flex flex-col text-green-900 bg-green-200 px-4 py-4 rounded-3xl'>
                     <FontAwesomeIcon className='h-6 w-6 pb-6' icon="fa-solid fa-user-group"/>
@@ -65,6 +62,9 @@ function Class(props) {
 
                 <div className='flex flex-col text-gray-900 bg-gray-200 px-4 py-4 rounded-3xl'>
                     <FontAwesomeIcon className='h-6 w-6 pb-6' icon="fa-solid fa-qrcode"/>
+                    <div className=''>
+                        {scanResult ? <div> Success: <a className = 'text-green-500' href={scanResult}>Student Scanned</a></div> : <div id="reader"></div>}
+                    </div>
                     <div className='font-light'>Scan in Students</div>
                 </div>
             </div>

@@ -20,8 +20,7 @@ function Class(props) {
 
     return (
         <DashboardLayout>
-            <CourseBanner courseName='Software Development II'/>
-            <div className='mx-12 py-4'>
+            <div className=' py-4'>
                 <div className='grid grid-rows-1 grid-cols-3 gap-16'>
 
                     <div className='flex flex-col text-green-900 bg-green-200 px-4 py-4 rounded-3xl'>

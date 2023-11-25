@@ -21,7 +21,6 @@ function Class(props) {
         scanner.render(success, error);
 
         function success(result) {
-            scanner.clear();
             setScanResult(result)
         }
 
@@ -63,7 +62,7 @@ function Class(props) {
                 <div className='flex flex-col text-gray-900 bg-gray-200 px-4 py-4 rounded-3xl'>
                     <FontAwesomeIcon className='h-6 w-6 pb-6' icon="fa-solid fa-qrcode"/>
                     <div className=''>
-                        {scanResult ? <div> Success: <a className = 'text-green-500' href={scanResult}>Student Scanned</a></div> : <div id="reader"></div>}
+                        {scanResult ? <div> Success: <a className = 'text-green-500' href={scanResult}>{scanResult}</a></div> : <div id="reader"></div>}
                     </div>
                     <div className='font-light'>Scan in Students</div>
                 </div>

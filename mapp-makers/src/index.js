@@ -28,7 +28,10 @@ root.render(
                         </SignInLayout>
                     }/>
                     <Route path='/dashboard' element={
+                        <DashboardLayout>
                             <Dashboard/>
+                        </DashboardLayout>
+
                     }/>
                     <Route path='/student' element={
                         <Student/>

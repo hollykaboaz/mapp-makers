@@ -13,10 +13,10 @@ import * as fontawesome from "@fortawesome/fontawesome-svg-core";
 import Sidebar from "./Sidebar";
 import CourseBanner from "./CourseBanner";
 import { useState, useEffect } from 'react';
-import {
-    getFirestore,  // Importing Firestore functionalities
-    collection,    // For creating a collection reference
-    getDocs        // For getting documents from Firestore
+import { 
+  getFirestore,  // Importing Firestore functionalities
+  collection,    // For creating a collection reference
+  onSnapshot ,
 } from 'firebase/firestore';
 
 // Adding specific icons to the fontawesome library
@@ -44,8 +44,9 @@ function DashboardLayout({ children }) {
         // Reference to the 'Courses' collection under 'testUser'
         const coursesCollection = collection(db, 'Users', 'testUser', 'Courses');
 
-        // Fetching documents from the 'Courses' collection
-        const coursesSnapshot = await getDocs(coursesCollection);
+              // Use onSnapshot to listen for changes in the collection
+      const unsubscribe = onSnapshot(coursesCollection, (coursesSnapshot) => {
+        
 
         // Extracting course data and setting it in the state
         const coursesData = coursesSnapshot.docs.map((doc) => {
@@ -53,7 +54,16 @@ function DashboardLayout({ children }) {
           return `${courseData.title}. Section: ${courseData.section}`;
         });
         setCourses(coursesData);
-      } catch (error) {
+
+        // Set the first course as the selected course when courses are loaded
+        if (coursesData.length > 0 && !selectedCourse) {
+          setSelectedCourse(coursesData[0]);
+        }
+      
+      });
+        // Cleanup the subscription when the component unmounts
+        return () => unsubscribe();
+     } catch (error) {
         console.error('Error fetching courses: ', error);
       }
     };

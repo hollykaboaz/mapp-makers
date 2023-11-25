@@ -2,8 +2,8 @@ import React from 'react'
 
 export const AboutSection = () => {
   return (
-    <div className="mt-8 p-6 border rounded-lg">
-    <div className="text-2xl font-bold mb-4">About Section</div>
+    <div className="mt-8 px-6 border rounded-lg">
+    <div className="text-2xl font-bold mb-4">About MAPP</div>
     <p className="mb-4">
       MAPP is an attempt to capture student attendance and reduce the possibilities of errors while doing so.
     </p>

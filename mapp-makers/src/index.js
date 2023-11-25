@@ -40,7 +40,7 @@ root.render(
                         <Class></Class>
                     }/>
                     <Route path='/about' element={
-                        <SignInLayout page='signIn'>
+                        <SignInLayout page='about'>
 
                         <AboutSection/>
                         </SignInLayout>

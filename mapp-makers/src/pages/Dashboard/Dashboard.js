@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react'
 import { DashNavbar } from '../../components/DashNavbar'
 import {Table} from '../../components/Table'
 import { getFirestore, collection, onSnapshot } from 'firebase/firestore';
+import DashboardLayout from "../../components/DashboardLayout";
 
 function Dashboard() {
   const [studentData, setStudentData] = useState([]);
@@ -34,9 +35,8 @@ const columns = [
 ];
   return (
     <>
-
-      <DashNavbar/>
-      <Table columns={columns} data={studentData}/>
+            <DashNavbar/>
+            <Table columns={columns} data={studentData}/>
 
     </>
   )

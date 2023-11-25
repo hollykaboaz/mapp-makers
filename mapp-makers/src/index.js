@@ -37,7 +37,7 @@ root.render(
                         <Student/>
                     }/>
                     <Route path='/about' element={
-                        <SignInLayout page='signIn'>
+                        <SignInLayout page='about'>
 
                         <AboutSection/>
                         </SignInLayout>

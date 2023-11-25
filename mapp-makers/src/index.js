@@ -37,7 +37,10 @@ root.render(
                         <Student/>
                     }/>
                     <Route path='/class' element={
-                        <Class></Class>
+                        <DashboardLayout>
+                            <Class></Class>
+                        </DashboardLayout>
+
                     }/>
                     <Route path='/about' element={
                         <SignInLayout page='about'>

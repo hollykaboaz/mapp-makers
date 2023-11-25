@@ -1,17 +1,27 @@
 import React from 'react';
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faBookBookmark, faChevronDown, faGear, faPlus, faQrcode, faUserGroup} from "@fortawesome/free-solid-svg-icons";
+import {
+    faBookBookmark,
+    faChevronDown,
+    faGear,
+    faPlus,
+    faQrcode,
+    faUserGroup,
+    faUserXmark
+} from "@fortawesome/free-solid-svg-icons";
 import * as fontawesome from "@fortawesome/fontawesome-svg-core";
 import Sidebar from "./Sidebar";
 import CourseBanner from "./CourseBanner";
-// Adding specific icons to the fontawesome library
-fontawesome.library.add(faUserGroup, faBookBookmark, faPlus, faGear, faChevronDown,faQrcode);
 import { useState, useEffect } from 'react';
-import { 
-  getFirestore,  // Importing Firestore functionalities
-  collection,    // For creating a collection reference
-  getDocs        // For getting documents from Firestore
+import {
+    getFirestore,  // Importing Firestore functionalities
+    collection,    // For creating a collection reference
+    getDocs        // For getting documents from Firestore
 } from 'firebase/firestore';
+
+// Adding specific icons to the fontawesome library
+fontawesome.library.add(faUserGroup, faBookBookmark, faPlus, faGear, faChevronDown,faQrcode,faUserXmark);
+
 
 // Main DashboardLayout component
 function DashboardLayout({ children }) {
@@ -51,7 +61,7 @@ function DashboardLayout({ children }) {
     // Fetch courses when the component mounts (runs once)
     fetchCourses();
   }, []); // The empty dependency array ensures that this effect runs once when the component mounts
-    
+
   // Structure of the DashboardLayout component
   return (
     <div className='grid grid-cols-4 h-screen'>

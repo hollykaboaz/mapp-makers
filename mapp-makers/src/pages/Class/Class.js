@@ -20,19 +20,19 @@ function Class(props) {
 
     return (
         <DashboardLayout>
-            <CourseBanner/>
+            <CourseBanner courseName='Software Development II'/>
             <div className='mx-12 py-4'>
                 <div className='grid grid-rows-1 grid-cols-3 gap-16'>
 
                     <div className='flex flex-col text-green-900 bg-green-200 px-4 py-4 rounded-3xl'>
                         <FontAwesomeIcon className='h-6 w-6 pb-6' icon="fa-solid fa-user-group"/>
-                        <div className='text-5xl font-bold'>23</div>
+                        <div className='text-5xl font-semibold'>23</div>
                         <div className='font-light'>Present</div>
                     </div>
 
                     <div className='flex flex-col text-red-900 bg-red-200 px-4 py-4 rounded-3xl'>
-                        <FontAwesomeIcon className='h-6 w-6 pb-6' icon="fa-solid fa-user-group"/>
-                        <div className='text-5xl font-bold'>5</div>
+                        <FontAwesomeIcon className='h-6 w-6 pb-6' icon="fa-solid fa-user-xmark" />
+                        <div className='text-5xl font-semibold'>5</div>
                         <div className='font-light'>Absent</div>
                     </div>
 

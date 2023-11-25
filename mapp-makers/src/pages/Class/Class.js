@@ -3,19 +3,38 @@ import DashboardLayout from "../../components/DashboardLayout";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {Table} from "../../components/Table";
 import sImage from "../../assets/avatar.png";
+import ClassSummaryTable from '../../components/ClassSummaryTable';
 import CourseBanner from "../../components/CourseBanner";
+import ClassesPageTable from '../../components/ClassesPageTable';
 
 function Class(props) {
     const data = [
         {
             id: 1,
-            image: sImage,
             lastName: 'Khawaja',
             firstName: 'Duaa',
             status: 'Present',
             in: '3:00pm'
+        },
+        {
+            id: 2,
+            lastName: 'Moore',
+            firstName: 'Amber',
+            status: 'Present',
+            in: '3:01pm'
         }
 
+    ]
+
+
+    const classesData= [
+        {
+            id: 1,
+            date: '11/25/2023',
+            attendance: '28/32',
+            note: 'Present',
+
+        }
     ]
 
     return (
@@ -41,9 +60,15 @@ function Class(props) {
                     </div>
                 </div>
                 <div className='text-2xl font-medium mt-12'> Attendance Report</div>
-                <Table data={data}>
+                <ClassSummaryTable data={data}>
 
-                </Table>
+                </ClassSummaryTable>
+
+
+                <div className='text-2xl font-medium mt-12'> Classes Table</div>
+                <ClassesPageTable data={classesData}>
+
+                </ClassesPageTable>
             </div>
 
 

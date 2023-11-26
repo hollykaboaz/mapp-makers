@@ -20,5 +20,6 @@ describe('CourseBanner Component', () => {
     expect(courseImage.getAttribute('src')).toEqual('course_background.jpg'); // Replace with the actual image path
 
   });
+  // Add more test cases to cover other scenarios or edge cases as they arise in future iterations
 
 });

@@ -20,9 +20,6 @@ describe('Modal Component', () => {
     // Check if the modal content is rendered when open is true
     expect(getByText('Mock Child Component')).toBeInTheDocument();
 
-    // Add more assertions to test the presence of specific elements or behavior
-
-    // Ensure other expected elements or behavior within the Modal component are present
   });
 
   test('does not render Modal component when open is false', () => {
@@ -33,8 +30,6 @@ describe('Modal Component', () => {
 
     // Check if the modal content is not rendered when open is false
     expect(container.firstChild).toBeNull();
-
-    // Add more assertions based on the expected behavior when open is false
   });
 
   test('handles close button click', () => {
@@ -52,9 +47,7 @@ describe('Modal Component', () => {
 
     // Check if the close button click event is handled correctly
     expect(handleClose).toHaveBeenCalledTimes(1); // Ensure the onClose function is called
-
-    // Add more assertions based on the expected behavior after clicking the close button
   });
 
-  // Add more test cases to cover other scenarios or edge cases
-});
+    // Add more test cases to cover other scenarios or edge cases as they arise in future iterations
+  });

@@ -28,6 +28,8 @@ describe('Stepper Component', () => {
     // Add assertions here to check CSS classes and styles applied to the steps
     // For example:
     expect(container.querySelector('.border-gray-900')).toBeInTheDocument(); // Checks if the border color is applied for completed steps
-    // Add more assertions based on the expected styles
+    // Add more assertions based on the expected styles as they arise in future iterations
   });
+  // Add more test cases to cover other scenarios or edge cases as they arise in future iterations
+
 });

@@ -15,6 +15,7 @@ function AddCourseForm() {
     section: '',
   });
   const [errorMessage, setErrorMessage] = useState('');
+  const [successMessage, setSuccessMessage] = useState('');
 
   // Function to handle form input changes
   const handleInputChange = (e) => {
@@ -38,7 +39,7 @@ function AddCourseForm() {
       if (querySnapshot && querySnapshot.docs && querySnapshot.docs.length === 0) {
         // Course does not exist, so add it to Firestore
         const docRef = await addDoc(coursesRef, formData);
-        alert('Course information added successfully with ID: ' + docRef.id);
+        setSuccessMessage('Course information added successfully!'); // Set success message
         console.log('Course information added successfully with ID: ' + docRef.id);
       } else {
         // Set flag if the course already exists
@@ -60,6 +61,14 @@ function AddCourseForm() {
   return (
     <div className="w-[300px] h-[300px] mx-auto mt-8">
       <h2 className="text-2xl font-bold mb-4">Add Course</h2>
+      {successMessage && ( // Display success message if it exists
+        <p className="text-green-500">{successMessage}</p>
+      )}
+      {errorMessage && (
+        <p className="text-red-500 mt-4">
+          {errorMessage}
+        </p>
+      )}
       <form onSubmit={handleSubmit} className="space-y-4">
         <div>
           <label htmlFor="title" className="block text-sm font-medium text-gray-700">Course Title</label>
@@ -92,13 +101,6 @@ function AddCourseForm() {
           Confirm
         </button>
       </form>
-
-      {/* Display error message if course already exists */}
-      {errorMessage && (
-        <p className="text-red-500 mt-4">
-          {errorMessage}
-        </p>
-      )}
     </div>
   );
 }

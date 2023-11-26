@@ -39,4 +39,6 @@ describe('EmailForm Component', () => {
     expect(updateFieldsMock).toHaveBeenCalledWith({ firstName: 'John' });
     expect(updateFieldsMock).toHaveBeenCalledWith({ lastName: 'Doe' });
   });
+  // Add more test cases to cover other scenarios or edge cases as they arise in future iterations
+
 });

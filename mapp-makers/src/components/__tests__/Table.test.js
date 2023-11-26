@@ -39,5 +39,5 @@ describe('Table Component', () => {
     expect(image).toHaveAttribute('src', 'example.jpg');
   });
 
-  // Add more test cases to cover other scenarios or edge cases
+    // Add more test cases to cover other scenarios or edge cases as they arise in future iterations
 });

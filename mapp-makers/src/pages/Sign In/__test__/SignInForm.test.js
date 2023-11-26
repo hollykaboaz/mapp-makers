@@ -34,7 +34,7 @@ describe('SignInForm Component', () => {
     expect(emailInput.value).toBe('test@example.com');
     expect(passwordInput.value).toBe('password123');
   });
-  /*
+  
   test('submits the form with user credentials', async () => {
     render(<SignInForm />);
     
@@ -54,6 +54,6 @@ describe('SignInForm Component', () => {
 
     await waitFor(() => expect(getAuth().signInWithEmailAndPassword).toHaveBeenCalled());
   });
-  */
-  // Add more test cases as needed
+  
+  // Add more test cases as needed in future iteration
 });

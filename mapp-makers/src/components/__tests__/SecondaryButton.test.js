@@ -31,5 +31,5 @@ describe('SecondaryButton Component', () => {
     expect(button).toHaveClass('text-lg');
   });
 
-  // Add more test cases to cover other scenarios or edge cases
-});
+    // Add more test cases to cover other scenarios or edge cases as they arise in future iterations
+  });

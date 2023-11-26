@@ -15,9 +15,7 @@ describe('DashNavbar Component', () => {
     expect(getByText('Students')).toBeInTheDocument();
     expect(getByText('Attendance')).toBeInTheDocument();
 
-    // Add more assertions to test the presence of specific elements or behavior
-
-    // Ensure other expected elements or behavior within the DashNavbar component are present
+    // Add more assertions to test the presence of specific elements or behavior as they become available
   });
 
   test('handles item click correctly', () => {
@@ -28,9 +26,7 @@ describe('DashNavbar Component', () => {
 
     // Add assertions to check if the clicked item is selected or other expected behavior
     expect(getByText('Students')).toHaveClass('font-medium'); // Example assertion
-
-    // Add more assertions based on the expected behavior after clicking a navigation link
   });
 
-  // Add more test cases to cover other scenarios or edge cases
-});
+    // Add more test cases to cover other scenarios or edge cases as they arise in future iterations
+  });

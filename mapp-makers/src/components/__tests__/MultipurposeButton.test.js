@@ -14,7 +14,6 @@ describe('MultipurposeButton Component', () => {
         const defaultContent = queryByTestId('default-content-identifier');
       
         expect(defaultContent).toBeInTheDocument();
-        // Add more assertions based on the expected default behavior of the component
       });
 
   test('renders MultipurposeButton component with provided text', () => {
@@ -36,5 +35,6 @@ describe('MultipurposeButton Component', () => {
     expect(onClickMock).toHaveBeenCalledTimes(1); // Ensure the onClick function is called
 
   });
+    // Add more test cases to cover other scenarios or edge cases as they arise in future iterations
 
 });

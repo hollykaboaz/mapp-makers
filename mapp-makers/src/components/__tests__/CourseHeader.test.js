@@ -25,4 +25,6 @@ describe('CourseHeader Component', () => {
     expect(customImageElement).toBeInTheDocument();
     expect(customImageElement.getAttribute('src')).toEqual(customImage);
   });
+    // Add more test cases to cover other scenarios or edge cases as they arise in future iterations
+
 });

@@ -22,10 +22,7 @@ describe('FormWrapper Component', () => {
     expect(getByText('Sample Title')).toBeInTheDocument();
     expect(getByText('Mock Child Component')).toBeInTheDocument();
 
-    // Add more assertions to test the presence of specific elements or behavior
-
-    // Ensure other expected elements or behavior within the FormWrapper component are present
   });
 
-  // Add more test cases to cover other scenarios or edge cases
-});
+    // Add more test cases to cover other scenarios or edge cases as they arise in future iterations
+  });

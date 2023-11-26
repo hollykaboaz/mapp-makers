@@ -25,5 +25,6 @@ describe('PassForm Component', () => {
 
     // Check if the updateFields function was called with the correct value
     expect(updateFieldsMock).toHaveBeenCalledWith({ password: 'newpassword123' });
-  });
+  });    
+  // Add more test cases to cover other scenarios or edge cases as they arise in future iterations
 });

@@ -103,6 +103,7 @@ function AddStudentForm() {
         email: '',
       });
       setSelectedCourses([]);
+      alert('Student successfully created!');
     } catch (error) {
       console.error('Error adding student information: ', error);
       alert('An error occurred while adding student information. Please try again.');

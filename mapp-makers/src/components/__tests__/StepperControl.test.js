@@ -37,4 +37,6 @@ describe('StepperControl Component', () => {
 
     expect(mockHandleClick).toHaveBeenCalledWith('next');
   });
+  // Add more test cases to cover other scenarios or edge cases as they arise in future iterations
+
 });

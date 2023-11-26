@@ -27,10 +27,10 @@ function SignInForm() {
             // history.push('/dashboard');
 
             const timestamp = new Date().toLocaleString();
-            return <CustomAlert message={`User has been logged in at ${timestamp}.`} />;
+            alert(`User has been logged in at ${timestamp}.`);
         } catch (error) {
             console.error('Sign-in error:', error.message);
-            return <CustomAlert message={`Sign-in error: ${error.message}`} />;
+            alert(`Sign-in error: ${error.message}`);
         }
     };
 

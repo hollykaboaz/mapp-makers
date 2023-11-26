@@ -15,11 +15,11 @@ async function runTest() {
         
         // Find the input field with the id "email-input" and enter an email
         const emailInput = await driver.findElement(By.id('email-input'));
-        await emailInput.sendKeys('dsmith83@ggc.edu');
+        await emailInput.sendKeys('random@ggc.edu');
 
         // Find the input field for password and enter the password
         const passwordInput = await driver.findElement(By.id('password-input'));
-        await passwordInput.sendKeys('password');
+        await passwordInput.sendKeys('passwrod');
 
         const button = await driver.findElement(By.css('.bg-stone-800'));
         await button.click();
@@ -31,8 +31,8 @@ async function runTest() {
         const alert = await driver.switchTo().alert();
         const alertText = await alert.getText();
 
-        if (alertText.includes('User has been logged in')) {
-            console.log('Test Passed! Alert contains "User has been logged in".');
+        if (alertText.includes('Sign-in error')) {
+            console.log('Test Passed! Alert contains "Sign-in error".');
         } else {
             console.error('Test Failed! Alert does not contain the expected text.');
         }

@@ -8,7 +8,6 @@ function Student(props) {
     return (
         <div>
             <DashboardLayout>
-                <CourseBanner></CourseBanner>
                 <div className='mx-12 py-4'>
                     <div className='grid grid-cols-6 gap-2'>
 

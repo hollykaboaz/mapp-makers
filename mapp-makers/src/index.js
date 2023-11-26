@@ -13,7 +13,7 @@ import {AboutSection} from "./components/AboutSection"; // Import the AuthProvid
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-    <React.StrictMode>
+    // <React.StrictMode>
         <AuthProvider>
             <BrowserRouter>
                 <Routes>
@@ -53,6 +53,6 @@ root.render(
             </BrowserRouter>
 
         </AuthProvider>
-    </React.StrictMode>,
+    // </React.StrictMode>
 );
 

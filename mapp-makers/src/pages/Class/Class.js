@@ -3,6 +3,9 @@ import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {Html5QrcodeScanner} from "html5-qrcode";
 import {Table} from "../../components/Table";
 import sImage from "../../assets/avatar.png";
+import ClassSummaryTable from '../../components/ClassSummaryTable';
+import CourseBanner from "../../components/CourseBanner";
+import ClassesPageTable from '../../components/ClassesPageTable';
 
 function Class(props) {
 
@@ -27,10 +30,33 @@ function Class(props) {
         }
     }, []);
 
-    const data = [{
-        id: 1, image: sImage, lastName: 'Khawaja', firstName: 'Duaa', status: 'Present', in: '3:00pm'
-    }
+    const data = [
+        {
+            id: 1,
+            lastName: 'Khawaja',
+            firstName: 'Duaa',
+            status: 'Present',
+            in: '3:00pm'
+        },
+        {
+            id: 2,
+            lastName: 'Moore',
+            firstName: 'Amber',
+            status: 'Present',
+            in: '3:01pm'
+        }
 
+    ]
+
+
+    const classesData= [
+        {
+            id: 1,
+            date: '11/25/2023',
+            attendance: '28/32',
+            note: 'Present',
+
+        }
     ]
 
     return (
@@ -59,11 +85,20 @@ function Class(props) {
                             <div id="reader"></div>}
                     </div>
                 </div>
+
+
             </div>
-
-
             <div className='text-2xl font-medium mt-12'> Attendance Report</div>
-            <Table data={data}></Table>
+            <ClassSummaryTable data={data}>
+
+            </ClassSummaryTable>
+
+
+            <div className='text-2xl font-medium mt-12'> Classes Table</div>
+            <ClassesPageTable data={classesData}>
+
+            </ClassesPageTable>
+
         </div>);
 }
 

@@ -3,8 +3,22 @@ import DashboardLayout from "../../components/DashboardLayout";
 import { faChevronDown} from "@fortawesome/free-solid-svg-icons";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import CourseBanner from "../../components/CourseBanner";
+import StudentTable from '../../components/StudentTable';
 
 function Student(props) {
+    const data = [
+        {
+            id: 1,
+            date: '11-25-2023',
+            status: 'present',
+            in: '3:00pm', 
+            note: 'completed quiz during class',
+
+        }
+
+    ]
+
+
     return (
         <div>
             <DashboardLayout>
@@ -46,10 +60,17 @@ function Student(props) {
                             </div>
                             <div className='w-full bg-red-950 text-white rounded-b-2xl px-4 py-2'>View All</div>
                         </div>
-
+                        
 
                     </div>
+
+                    <div className='text-2xl font-medium mt-12'> Attendance Report</div>
+                <StudentTable data={data}>
+
+                </StudentTable>
                 </div>
+                    
+            
 
 
 

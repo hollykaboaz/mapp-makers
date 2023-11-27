@@ -48,17 +48,6 @@ function Class(props) {
 
     ]
 
-
-    const classesData= [
-        {
-            id: 1,
-            date: '11/25/2023',
-            attendance: '28/32',
-            note: 'Present',
-
-        }
-    ]
-
     return (
         <div className=' py-4'>
             <div className='grid grid-cols-3 gap-2'>
@@ -94,10 +83,8 @@ function Class(props) {
             </ClassSummaryTable>
 
 
-            <div className='text-2xl font-medium mt-12'> Classes Table</div>
-            <ClassesPageTable data={classesData}>
 
-            </ClassesPageTable>
+
 
         </div>);
 }

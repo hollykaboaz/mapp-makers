@@ -9,7 +9,8 @@ import Dashboard from "./pages/Dashboard/Dashboard";
 import Student from "./pages/Student/Student";
 import DashboardLayout from "./components/DashboardLayout";
 import Class from "./pages/Class/Class";
-import {AboutSection} from "./components/AboutSection"; // Import the AuthProvider
+import {AboutSection} from "./components/AboutSection";
+import Classes from "./pages/Classes/Classes"; // Import the AuthProvider
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -39,6 +40,12 @@ root.render(
                     <Route path='/class' element={
                         <DashboardLayout>
                             <Class></Class>
+                        </DashboardLayout>
+
+                    }/>
+                    <Route path='/classes' element={
+                        <DashboardLayout>
+                            <Classes></Classes>
                         </DashboardLayout>
 
                     }/>

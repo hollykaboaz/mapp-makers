@@ -1,4 +1,4 @@
-#MAPP Attendence App# <br>
+# MAPP Attendence App <br>
 An application that aids in quickly managing class attendance by identifying and recognizing students attendance using a QCR code.
 
 **Repo Location:** <br>
@@ -24,22 +24,22 @@ Due to the students' ability to abstain from being fully present in a classroom 
 Furthermore, students added in a class will be able to track their own attendance, receive communication from their teachers, and view feedback constantly. The teachers can track and analyze student attendance throughout multiple classes, send communications, and receive feedback .
 This student-led application development program will be nationally recognized for its abilities and potential revenue for the entire college and IT department. Student app developers will receive individual credits, class credits, and letters of recommendation as recognition for their expertise..
 
-##Developer Installation## <br>
+## Developer Installation <br>
 
-###Preliminary Requirements###
+### Preliminary Requirements <br>
 Ensure you have [Git](https://git-scm.com/downloads), [Node.JS](https://nodejs.org/en/download), and [VS Code](https://code.visualstudio.com/download) installed on your computer.<br>
 
-###Cloning the Repo in VS Code###
-1. Open the command palette in VS Code by pressing 'Ctrl + Shift + P'.
-2. Enter gitcl in the command prompt and select the 'Git Clone' command then the 'Clone from GitHub' and press 'Enter'.
+### Cloning the Repo in VS Code <br>
+1. Open the command palette in VS Code by pressing `Ctrl + Shift + P`.
+2. Enter gitcl in the command prompt and select the `Git Clone` command then the `Clone from GitHub` and press `Enter`.
 3. If you're asked to sign into GitHub, complete the sign-in process.
 4. Enter (hollykaboaz/mapp-makers) in the **Repository URL** field.
 6. Select the directory where you want to clone the project.
 
 
-###Running the Application###
+### Running the Application <br>
 Once you have cloned the repository, follow these steps to run the application:
 1. Go into the directory where you have cloned the repository.
-2. Right click on the **mapp-makers** folder and select 'Open in Integrated Terminal'.
-3. Once in the terminal, type in and enter 'npm install'. This will download all of the packages needed to run the application.
-4. Once the packages are installed, type in and enter 'npm start' to run the application. A new window should pop up on your browser and the application will be running.
+2. Right click on the **mapp-makers** folder and select `Open in Integrated Terminal`.
+3. Once in the terminal, type in and enter `npm install`. This will download all of the packages needed to run the application.
+4. Once the packages are installed, type in and enter `npm start` to run the application. A new window should pop up on your browser and the application will be running.

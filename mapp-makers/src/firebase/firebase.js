@@ -1,6 +1,6 @@
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
-import { getFirestore  } from "firebase/firestore";
+import { getFirestore, collection, getDocs } from "firebase/firestore";
 
 const firebaseConfig = {
 
@@ -22,4 +22,20 @@ const app = initializeApp(firebaseConfig);
 const db = getFirestore();
 const auth = getAuth(app);
 
-export { auth, db };
+//collection reference for Students
+const colRef = collection(db, 'students');
+
+//get data from collection
+getDocs(colRef)
+  .then((snapshot) => {
+    let students = []
+    snapshot.docs.forEach((doc) => {
+      students.push({ ...doc.data(), id: doc.id })
+    })
+    console.log(students);
+  })
+  .catch(err => {
+    console.log(err.message);
+  })
+
+export { auth, db, app};

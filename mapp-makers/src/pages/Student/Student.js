@@ -2,10 +2,12 @@ import React from 'react';
 import DashboardLayout from "../../components/DashboardLayout";
 import { faChevronDown} from "@fortawesome/free-solid-svg-icons";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import QRCode from '../../components/QRCode';
 import CourseBanner from "../../components/CourseBanner";
 import StudentTable from '../../components/StudentTable';
 
 function Student(props) {
+    const studentUID = "fhbsdhbf332r2";
     const data = [
         {
             id: 1,
@@ -68,10 +70,8 @@ function Student(props) {
                 <StudentTable data={data}>
 
                 </StudentTable>
+                <QRCode studentUID={studentUID}/>
                 </div>
-                    
-            
-
 
 
             </DashboardLayout>

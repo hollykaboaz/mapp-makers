@@ -43,3 +43,6 @@ Once you have cloned the repository, follow these steps to run the application:
 2. Right click on the **mapp-makers** folder and select `Open in Integrated Terminal`.
 3. Once in the terminal, type in and enter `npm install`. This will download all of the packages needed to run the application.
 4. Once the packages are installed, type in and enter `npm start` to run the application. A new window should pop up on your browser and the application will be running.
+
+**License**
+This project is  licensed under the Apache License 2.0. Look in License.txt at the actual license.

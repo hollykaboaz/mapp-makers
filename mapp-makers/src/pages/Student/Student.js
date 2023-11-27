@@ -2,8 +2,6 @@ import React from 'react';
 import DashboardLayout from "../../components/DashboardLayout";
 import { faChevronDown} from "@fortawesome/free-solid-svg-icons";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import CourseBanner from "../../components/CourseBanner";
-import StudentTable from '../../components/StudentTable';
 import QRCode from '../../components/QRCode';
 import CourseBanner from "../../components/CourseBanner";
 import StudentTable from '../../components/StudentTable';

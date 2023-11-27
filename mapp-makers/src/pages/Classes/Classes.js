@@ -15,9 +15,7 @@ function Classes(props) {
     ]
     return (
         <div>
-            <DashNavbar>
-                
-            </DashNavbar>
+            <DashNavbar/>
             <div className='text-2xl font-medium mt-12'> Your Classes</div>
             <ClassesPageTable data={classesData}>
             </ClassesPageTable>

@@ -1,55 +1,42 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import { DashNavbar } from '../../components/DashNavbar'
 import {Table} from '../../components/Table'
-import sImage from "../../assets/avatar.png";
-import { CourseHeader } from '../../components/CourseHeader';
-import Student from "../Student/Student";
-
+import { getFirestore, collection, onSnapshot } from 'firebase/firestore';
+import DashboardLayout from "../../components/DashboardLayout";
 
 function Dashboard() {
+  const [studentData, setStudentData] = useState([]);
 
-const courseName = "Software Dev,";// need to fix how these will be passed through the db and the App
-const courseSection= " Section 2";
-const customImage = sImage;
+  useEffect(() => {
+    
+        const db = getFirestore();
+        const studentsCollection = collection(db, 'students');
+  // Use onSnapshot to listen for changes in the collection
+  const studentSnapshot = onSnapshot(studentsCollection, (querySnapshot) => {
+    const studentsData = querySnapshot.docs.map((doc) => ({
+        id: doc.id,
+        ...doc.data(),
+      }));
 
+      setStudentData(studentsData);
+    });
 
-  const data = [
-    {id:1,
-    image:sImage,
-    lastName: 'Khawaja',
-    firstName: 'Duaa',
-    email: 'duaak@ggc.edu',
-    attendance:'75%'
-    },
+       // Cleanup the subscription when the component unmounts
+    return () => studentSnapshot();
+  }, []); // The empty dependency array ensures that this effect runs once when the component mounts
 
-    {id:2,
-    image:sImage,
-    lastName: 'Khawaja',
-    firstName: 'Fatima',
-    email:  'fatimak@ggc.edu',
-    attendance:'85%'
-    },
-
-    {id:3,
-    image:sImage,
-    lastName: 'Boaz',
-    firstName: 'Holly',
-    email: 'hollyB@ggc.edu',
-    attendance:'95%'},
-    {
-      id: 4,
-      image:'',
-      lastName: 'Doe',
-      firstName: 'John',
-      email: 'john.doe@example.com',
-      attendance: '80%'
-    },
-
-  ] 
+const columns = [
+  { Header: 'ID', accessor: 'id' },
+  { Header: 'Image', accessor: 'image' },
+  { Header: 'Last Name', accessor: 'lastName' },
+  { Header: 'First Name', accessor: 'firstName' },
+  { Header: 'Email', accessor: 'email' },
+  { Header: 'Attendance', accessor: 'attendance' },
+];
   return (
     <>
-      <DashNavbar/>
-      <Table data={data}/> 
+            <DashNavbar/>
+            <Table columns={columns} data={studentData}/>
 
     </>
   )

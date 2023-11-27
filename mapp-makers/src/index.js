@@ -7,11 +7,14 @@ import {SignInLayout} from "./layouts/SignInLayout";
 import SignInForm from "./pages/Sign In/SignInForm";
 import Dashboard from "./pages/Dashboard/Dashboard";
 import Student from "./pages/Student/Student";
-import DashboardLayout from "./components/DashboardLayout"; // Import the AuthProvider
+import DashboardLayout from "./components/DashboardLayout";
+import Class from "./pages/Class/Class";
+import {AboutSection} from "./components/AboutSection";
+import Classes from "./pages/Classes/Classes"; // Import the AuthProvider
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-    <React.StrictMode>
+    // <React.StrictMode>
         <AuthProvider>
             <BrowserRouter>
                 <Routes>
@@ -34,10 +37,29 @@ root.render(
                     <Route path='/student' element={
                         <Student/>
                     }/>
+                    <Route path='/class' element={
+                        <DashboardLayout>
+                            <Class></Class>
+                        </DashboardLayout>
+
+                    }/>
+                    <Route path='/classes' element={
+                        <DashboardLayout>
+                            <Classes></Classes>
+                        </DashboardLayout>
+
+                    }/>
+                    <Route path='/about' element={
+                        <SignInLayout page='about'>
+
+                        <AboutSection/>
+                        </SignInLayout>
+
+                    }/>
                 </Routes>
             </BrowserRouter>
 
         </AuthProvider>
-    </React.StrictMode>,
+    // </React.StrictMode>
 );
 

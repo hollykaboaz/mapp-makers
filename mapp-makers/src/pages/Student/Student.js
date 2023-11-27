@@ -5,6 +5,8 @@ import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import CourseBanner from "../../components/CourseBanner";
 import StudentTable from '../../components/StudentTable';
 import QRCode from '../../components/QRCode';
+import CourseBanner from "../../components/CourseBanner";
+import StudentTable from '../../components/StudentTable';
 
 function Student(props) {
     const studentUID = "fhbsdhbf332r2";
@@ -24,7 +26,6 @@ function Student(props) {
     return (
         <div>
             <DashboardLayout>
-                <CourseBanner></CourseBanner>
                 <div className='mx-12 py-4'>
                     <div className='grid grid-cols-6 gap-2'>
 
@@ -73,9 +74,6 @@ function Student(props) {
                 </StudentTable>
                 <QRCode studentUID={studentUID}/>
                 </div>
-                    
-            
-
 
 
             </DashboardLayout>

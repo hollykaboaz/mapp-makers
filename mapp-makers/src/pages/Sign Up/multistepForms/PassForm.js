@@ -12,11 +12,6 @@ function passForm({ password, updateFields, isRecaptchaVerified, handleRecaptcha
                 onChange={(e) => updateFields({ password: e.target.value })}
                 className='border-gray-200 border rounded w-full p-2  focus:outline-0 '/>
 
-            {/* Add the reCAPTCHA component */}
-            <ReCAPTCHA
-              sitekey="6LceoKwoAAAAAB_F4pcPRoXvID7ig4wGlWlGg3Qf"
-              onChange={handleRecaptchaVerify}
-            />
     </FormWrapper>
   );
 }

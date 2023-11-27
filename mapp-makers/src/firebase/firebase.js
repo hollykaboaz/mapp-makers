@@ -1,7 +1,6 @@
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
-import { getFirestore  } from "firebase/firestore";
-import { initializeAppCheck, ReCaptchaV3Provider } from '@firebase/app-check';
+import { getFirestore, collection, getDocs } from "firebase/firestore";
 
 const firebaseConfig = {
 
@@ -23,10 +22,20 @@ const app = initializeApp(firebaseConfig);
 const db = getFirestore();
 const auth = getAuth(app);
 
-// Initialize App Check with reCAPTCHA
-const appCheck = initializeAppCheck(app, {
-  provider: new ReCaptchaV3Provider('6LdhuWsoAAAAAOZzmixISGygbzcJErHKmc0tC0Ni'),
-});
+//collection reference for Students
+const colRef = collection(db, 'students');
 
+//get data from collection
+getDocs(colRef)
+  .then((snapshot) => {
+    let students = []
+    snapshot.docs.forEach((doc) => {
+      students.push({ ...doc.data(), id: doc.id })
+    })
+    console.log(students);
+  })
+  .catch(err => {
+    console.log(err.message);
+  })
 
-export { auth, db, app, appCheck};
+export { auth, db, app};
